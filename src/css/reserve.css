@@ -1,0 +1,140 @@
+.popup_reserve {
+  position: fixed;
+  background-color: var(--color-white);
+  width: 624px;
+  max-width: 90%;
+  max-height: 90%;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+  padding: 40px;
+  z-index: 1001;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow-y: scroll;
+}
+.popup_reserve span {
+  color: var(--color-secondary-red);
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.popup_reserva span:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+.form_container {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.form_container label {
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 20px 0 10px;
+  color: var(--color-secondary-red);
+}
+form {
+  height: 100%;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+form label,
+.number-people,
+.check {
+  display: flex;
+}
+form input,
+select {
+  padding: 10px 5px;
+  border-radius: 10px;
+  border: 1px solid var(--color-secondary-red);
+  font-size: 2rem;
+  color: gray;
+}
+form .name input,
+.accommodation select {
+  width: 432px;
+  height: 48px;
+  border-radius: 10px;
+}
+select option {
+  font-size: 1.6rem;
+}
+.check input {
+  width: 150px;
+  font-size: 1.6rem;
+}
+.check,
+.number-people {
+  width: 432px;
+  justify-content: space-between;
+}
+.number-people input {
+  width: 100px;
+  text-align: center;
+}
+
+.number-people .border {
+  border: 1px solid var(--color-secondary-red);
+  padding: 0 5px;
+  border-radius: 10px;
+}
+.number-people button {
+  font-size: 2rem;
+  border: none;
+  background-color: transparent;
+  color: gray;
+}
+
+/* REMOÇÃO DE SPINNERS DO INPUT NUMBER*/
+
+/* Para Chrome, Safari, Edge e Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.number-people input {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.number-people,
+.check {
+  gap: 40px;
+}
+.reservation_restaurant {
+  width: 100%;
+  color: var(--color-secondary-red);
+  font-size: 4rem;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--color-secondary-red);
+}
+.reservation_restaurant .input_group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

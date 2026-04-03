@@ -1,4 +1,4 @@
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   header .list_menu-header,
   header .button_call-action {
     display: none;
@@ -30,6 +30,8 @@
     font-size: 4rem;
     color: var(--color-white);
   }
+}
+@media (max-width: 800px) {
   main .banner {
     height: 60vh;
   }

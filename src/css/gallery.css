@@ -1,0 +1,67 @@
+.gallery {
+  background-color: var(--color-primary-red);
+  text-align: center;
+  padding: 20px 0;
+}
+.gallery_container {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  margin: 0 auto;
+  width: 85%;
+}
+.gallery_container button {
+  width: 29.6px;
+  height: 48px;
+  text-align: center;
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--white-color);
+  background-color: transparent;
+  border: none;
+}
+.gallery_container button:hover {
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+.gallery h3 {
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 5px;
+  padding: 0;
+}
+.gallery .container {
+  margin: 20px auto;
+  padding: 0 5px;
+  width: 1000px;
+  height: 500px;
+  overflow: hidden;
+}
+.slider {
+  display: flex;
+  gap: 5px;
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+.gallery .container figure {
+  margin: 0;
+  position: relative;
+  min-width: 1000px;
+}
+.gallery figcaption {
+  position: absolute;
+  font-size: 2rem;
+  padding: 10px;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.7;
+  text-align: start;
+}
+.gallery .container img {
+  border-radius: 20px;
+  width: 1000px;
+  height: 500px;
+  object-fit: cover;
+}

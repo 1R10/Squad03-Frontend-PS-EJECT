@@ -11,7 +11,20 @@
 :root {
   --color-primary-red: #8c3933;
   --color-secondary-red: #54221e;
+  --color-rose: #f2a49e;
   --color-white: #fff;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: none;
+  cursor: pointer;
 }
 header,
 html,
@@ -24,19 +37,20 @@ a {
 }
 
 /* Para Chrome, Edge e Safari */
-.popup_reserva::-webkit-scrollbar {
-  width: 10px; 
+::-webkit-scrollbar {
+  width: 10px;
 }
-.popup_reserva::-webkit-scrollbar-thumb {
-  background: var(--color-primary-red); 
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-red);
   border-radius: 10px;
 }
 /* Para Firefox */
-.popup_reserva {
+* {
   scrollbar-color: var(--color-primary-red) #f1f1f1;
   scrollbar-width: thin;
 }
-.menu_hamburguer {
+.menu_hamburguer,
+.container_menu {
   display: none;
 }
 .container /*Container geral*/ {
@@ -51,7 +65,7 @@ header {
   background-color: var(--color-primary-red);
   width: 100%;
   height: 90px;
-  z-index: 1000;
+  z-index: 1002;
   position: fixed;
 }
 .logo {

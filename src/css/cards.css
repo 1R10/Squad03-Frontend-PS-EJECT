@@ -1,0 +1,42 @@
+.cards {
+  min-height: 575px;
+  background-color: var(--color-rose);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cards .container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.cards h3 {
+  color: var(--color-secondary-red);
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 5px;
+}
+.card figure {
+  border-radius: 10px;
+  position: relative;
+}
+.card figcaption {
+  position: absolute;
+  font-size: 2.5rem;
+  text-align: center;
+  bottom: 0;
+  background-color: var(--color-white);
+  color: var(--color-secondary-red);
+  width: 100%;
+  padding: 10px 0;
+  font-weight: 600;
+}
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}

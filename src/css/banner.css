@@ -7,7 +7,7 @@ main .banner {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment: fixed; 
+  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,6 @@ main .banner {
 }
 .banner .container {
   display: block;
-  width: 60%;
 }
 .banner .container .title {
   font-size: 6.4rem;

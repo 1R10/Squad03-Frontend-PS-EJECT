@@ -1,102 +1,103 @@
 .popup_reserve {
   position: fixed;
   background-color: var(--color-white);
-  width: 624px;
+  width: 700px;
   max-width: 90%;
-  max-height: 90%;
+  height: 90%;
   display: none;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: flex-start;
-  padding: 40px;
-  z-index: 1001;
+  justify-content: center;
+  z-index: 1002;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   overflow-y: scroll;
+  border-radius: 20px;
 }
-.popup_reserve span {
-  color: var(--color-secondary-red);
+#close-reservation {
   position: fixed;
-  top: 0;
   right: 0;
+  top: 0;
   margin: 20px;
   font-size: 2rem;
+  color: var(--color-secondary-red);
+  z-index: 1002;
   cursor: pointer;
 }
-.popup_reserva span:hover {
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px);
+.popup_container {
+  height: 95%;
+  width: 95%;
 }
-.form_container {
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 30px;
-}
-.form_container label {
-  font-size: 2rem;
-  font-weight: 500;
-  padding: 20px 0 10px;
-  color: var(--color-secondary-red);
+.popup_container img {
+  margin-top: 50px;
 }
 form {
-  height: 100%;
-  width: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-form label,
-.number-people,
-.check {
-  display: flex;
-}
-form input,
-select {
-  padding: 10px 5px;
-  border-radius: 10px;
-  border: 1px solid var(--color-secondary-red);
-  font-size: 2rem;
-  color: gray;
-}
-form .name input,
-.accommodation select {
-  width: 432px;
-  height: 48px;
-  border-radius: 10px;
-}
-select option {
-  font-size: 1.6rem;
-}
-.check input {
-  width: 150px;
-  font-size: 1.6rem;
-}
-.check,
-.number-people {
-  width: 432px;
-  justify-content: space-between;
-}
-.number-people input {
-  width: 100px;
-  text-align: center;
+  margin: 20px 0;
+  width: 80%;
+  margin: 0 auto;
 }
 
-.number-people .border {
-  border: 1px solid var(--color-secondary-red);
-  padding: 0 5px;
-  border-radius: 10px;
-}
-.number-people button {
+form label {
   font-size: 2rem;
+  margin-bottom: 5px;
+  text-align: start;
+  color: var(--color-secondary-red);
+}
+
+.name,
+.check-container,
+.accommodation {
+  display: flex;
+  flex-direction: column;
+}
+
+.input_group,
+.check,
+.number-people {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.dine,
+.check-container,
+.number-people > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 150px;
+}
+.name,
+.check-container,
+.accommodation {
+  margin: 20px 0;
+}
+input,
+select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.5rem;
+  color: gray;
+  border: 2px solid var(--color-secondary-red);
+}
+
+.number-people input {
   border: none;
   background-color: transparent;
+  text-align: center;
+  width: 40px;
+  margin: 0 10px;
+}
+.number-people .border {
+  border: 2px solid var(--color-secondary-red);
+  border-radius: 10px;
+}
+.number-people .border button {
+  font-size: 3rem;
+  background-color: transparent;
+  border: none;
   color: gray;
 }
 
@@ -114,27 +115,21 @@ input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
 }
-
-.number-people input {
-  border: none;
-  outline: none;
-  background: transparent;
-}
-.number-people,
-.check {
-  gap: 40px;
-}
 .reservation_restaurant {
-  width: 100%;
-  color: var(--color-secondary-red);
-  font-size: 4rem;
-  margin: 20px 0;
+  margin: 25px 0 10px;
   padding: 10px;
-  border-radius: 10px;
   border: 1px solid var(--color-secondary-red);
+  border-radius: 10px;
 }
-.reservation_restaurant .input_group {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+.reservation_restaurant legend {
+  font-size: 2rem;
+  margin: 5px 0;
+  color: var(--color-secondary-red);
+}
+
+.form_container .button_call-action {
+  margin: 40px 0;
+}
+.form_container {
+  padding: 10px 0;
 }

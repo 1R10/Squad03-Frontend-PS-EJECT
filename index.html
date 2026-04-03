@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="src/css/banner.css">
   <link rel="stylesheet" href="src/css/responsive.css">
   <link rel="stylesheet" href="src/css/menu-hamburguer.css">
+  <link rel="stylesheet" href="src/css/cards.css">
+  <link rel="stylesheet" href="src/css/gallery.css">
 
   <title>Apollo Hotel</title>
 </head>
@@ -97,16 +99,16 @@
             <div class="input-adult">
               <label for="adult">Adultos</label>
               <div class="border">
-                <button type="button" class="stepper-btn" id="btn-menos">-</button>
+                <button type="button" class="stepper-btn-menos-one" id="btn-menos">-</button>
                 <input type="number" name="amount-adult" id="input-adult">
-                <button type="button" class="stepper-btn" id="btn-mais">+</button>
+                <button type="button" class="stepper-btn-mais-one" id="btn-mais">+</button>
               </div>
             </div>
             <div class="input-child">
               <label for="child">Crianças</label>
-              <div class="border"> <button type="button" class="stepper-btn" id="btn-menos">-</button>
+              <div class="border"> <button type="button" class="stepper-btn-menos-two" id="btn-menos">-</button>
                 <input type="number" name="amount-child" id="input-child">
-                <button type="button" class="stepper-btn" id="btn-mais">+</button>
+                <button type="button" class="stepper-btn-mais-two" id="btn-mais">+</button>
               </div>
             </div>
 
@@ -114,14 +116,14 @@
           <fieldset class="reservation_restaurant">
             <legend>Reservar Restaurante (opcional)</legend>
             <div class="input_group">
-              <div class="date-dine">
+              <div class="dine date-dine">
                 <label for="restaurant-date">Data do Jantar</label>
                 <input type="date" id="restaurant-date" class="input_field">
               </div>
-              <div class="hour-dine">
+              <div class=" dine hour-dine">
                 <label for="restaurant-time">Horário</label>
                 <select id="restaurant-time">
-                  <option value="00:00">00:00</option>
+                  <option value="0">--:--</option>
                   <option value="19:00">19:00</option>
                   <option value="20:00">20:00</option>
                   <option value="21:00">21:00</option>
@@ -139,16 +141,67 @@
       </div>
     </div>
   </section>
+  <div id="overlay"></div>
   <main>
     <section class="banner">
       <div class="container">
         <h1 class="title">Seu próximo hotel favorito</h1>
-        <h2 class="sub-title">No coração de Mônaco, torne sua viagem inesquecível</h2>
+        <h2 class="sub-title">No coração de Mônaco, torne <br> sua viagem inesquecível</h2>
         <div class="button_call-action">
           <button class="button_item">
             Fazer Reserva
           </button>
         </div>
+      </div>
+    </section>
+    <section class="cards">
+      <h3>Aproveite o melhor de Mônaco</h3>
+      <div class="container">
+        <div class="card">
+          <figure>
+            <img src="src/images/cards/vojtech-bruzek-Yrxr3bsPdS0-unsplash 2 (2).png" alt="">
+            <figcaption>Conforto</figcaption>
+          </figure>
+        </div>
+        <div class="card">
+          <figure>
+            <img src="src/images/cards/vojtech-bruzek-Yrxr3bsPdS0-unsplash 2.png" alt="">
+            <figcaption>Localização</figcaption>
+          </figure>
+        </div>
+        <div class="card">
+          <figure>
+            <img src="src/images/cards/vojtech-bruzek-Yrxr3bsPdS0-unsplash 2 (1).png" alt="">
+            <figcaption>Entretenimento</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+    <section class="gallery">
+      <h3>Galeria</h3>
+      <div class="gallery_container">
+        <button id="arrow_left">&lt;</button>
+        <div class="container">
+          <div id="slider" class="slider">
+            <figure>
+              <img src="src/images/gallery/pistaf1-ia.png" alt="">
+              <figcaption>Legenda da imagem aqui</figcaption>
+            </figure>
+            <figure>
+              <img src="src/images/gallery/hotel.png" alt="">
+              <figcaption>Legenda da imagem aqui</figcaption>
+            </figure>
+            <figure>
+              <img src="src/images/gallery/piscina-hotel.jpg" alt="">
+              <figcaption>Legenda da imagem aqui</figcaption>
+            </figure>
+            <figure>
+              <img src="src/images/gallery/piscina-hotel.jpg" alt="">
+              <figcaption>Legenda da imagem aqui</figcaption>
+            </figure>
+          </div>
+        </div>
+        <button id="arrow_right">&gt;</button>
       </div>
     </section>
   </main>

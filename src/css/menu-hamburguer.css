@@ -3,8 +3,8 @@
   left: 0;
   bottom: 0;
   background-color: var(--color-white);
-  border: 5px solid var(--color-white);
-  z-index: 999;
+  opacity: 0.8;
+  z-index: 1001;
   width: 50%;
   max-height: 100vh;
   top: 90px;
@@ -14,7 +14,7 @@
   display: none;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--color-white);
+  border-radius: 20px 0 0 20px;
 }
 .container_menu-hamburguer .container {
   flex-direction: column;
@@ -25,9 +25,9 @@
 .container_menu-hamburguer .list_menu-header {
   flex-direction: column;
 }
-.container_menu-hamburguer .list_menu-header a{
+.container_menu-hamburguer .list_menu-header a {
   color: var(--color-secondary-red);
 }
-.button_call-action button{
+.button_call-action button {
   color: var(--color-white);
 }

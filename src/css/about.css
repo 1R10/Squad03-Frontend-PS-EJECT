@@ -1,0 +1,106 @@
+.section_title {
+  background-color: var(--color-rose);
+  text-align: center;
+  padding: 20px 0;
+}
+.section_title .container {
+  flex-direction: column;
+}
+#about h2 {
+  color: var(--color-secondary-red);
+  font-size: 6rem;
+  font-style: italic;
+  font-weight: 700;
+}
+.section_title p {
+  color: var(--color-primary-red);
+  font-size: 4rem;
+  font-weight: 400;
+}
+#about .container {
+  justify-content: space-between;
+  gap: 99px;
+  padding: 20px 30px;
+}
+.history_hotel {
+  display: flex;
+  background-color: var(--color-primary-red);
+}
+.history_container-text p {
+  font-size: 3rem;
+  font-weight: 400;
+  max-width: 60ch;
+  line-height: 1.3;
+}
+.history_container-image {
+  text-align: end;
+}
+#about .cards_values {
+  background-color: var(--color-secondary-red);
+}
+#about .cards .container {
+  justify-content: space-between;
+  gap: 20px;
+}
+#about .card {
+  background-color: var(--color-primary-red);
+  width: 300px;
+  height: 400px;
+  padding: 16px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+}
+#about .card .box-icon {
+  background-color: var(--color-secondary-red);
+  padding: 10px;
+  border-radius: 50%;
+}
+#about .value-text h4 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+#about .value-text p {
+  font-weight: 400;
+  font-size: 2rem;
+}
+.team {
+  background-color: var(--color-rose);
+  text-align: center;
+  padding: 20px 0;
+}
+#about .team .container {
+  width: 80%;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#about .team h2 {
+  font-style: normal;
+}
+#about .team > p {
+  font-size: 3rem;
+  color: var(--color-secondary-red);
+  margin: 20px 0;
+}
+.team figure img {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  width: 200px;
+}
+.team figure img:hover {
+  transform: translateY(-5px);
+}
+.team figcaption {
+  padding: 10px 0;
+  font-size: 3rem;
+}
+.team figcaption h3 {
+  color: var(--color-secondary-red);
+}
+.team figcaption p {
+  color: var(--color-primary-red);
+}

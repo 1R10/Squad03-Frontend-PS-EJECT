@@ -93,3 +93,37 @@ function slide() {
   slider.style.transform = `translateX(${-cont * 1005}px)`;
 }
 setInterval(slide, 5000);
+
+const inputDate = document.querySelectorAll('input[type="date"]');
+
+const checkin = document.querySelector('input[name="checkin"]');
+const checkout = document.querySelector('input[name="checkout"]');
+
+const buttonSubmit = document.querySelector('button[type="submit"]');
+
+const clean = () => {
+  inputDate.forEach((input) => {
+    input.value = "";
+  });
+};
+function inputsDate() {
+
+  const dataAtual = new Date();
+  dataAtual.setHours(0, 0, 0, 0);
+
+  const dataCheckin = new Date(checkin.value);
+  const dataCheckout = new Date(checkout.value);
+
+  if (dataCheckin < dataAtual || dataCheckout < dataAtual) {
+    alert("Data de check-in inválida!");
+    clean();
+    return
+  }
+  if (dataCheckout < dataCheckin) {
+    alert("Data de check-out inválida!");
+    clean();
+    return
+  }
+}
+
+buttonSubmit.addEventListener("click", inputsDate);

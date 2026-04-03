@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/geral.css">
+  <link rel="stylesheet" href="src/css/banner.css">
+  <link rel="stylesheet" href="src/css/blog.css">
+  <link rel="stylesheet" href="src/css/cards.css">
+   <link rel="stylesheet" href="src/css/responsive.css">
+  <title>Blog - Apollo Hotel</title>
+</head>
+
+<body>
+  <header>
+    <div class="container header_container">
+      <div class="logo">
+        <img src="src/images/Logo.svg" alt="Logo Hotel Apollo">
+      </div>
+      <nav class="menu_header">
+        <ul class="list_menu-header">
+          <li class="list_item-header"><a href="index.html">Home</a></li>
+          <li class="list_item-header"><a href="blog.html">Blog</a></li>
+          <li class="list_item-header"><a href="about.html">Sobre Nós</a></li>
+          <link rel="stylesheet" href="src/css/responsive.css">
+          <link rel="stylesheet" href="src/css/menu-hamburguer.css">
+          <link rel="stylesheet" href="src/css/reserve.css">
+        </ul>
+        <div class="menu_hamburguer">
+          <button id="hamburguer_button" class="hamburguer_icon">
+            <span class="icon"></span>
+            <span class="icon"></span>
+            <span class="icon"></span>
+            <span id="cancel">X</span>
+          </button>
+        </div>
+      </nav>
+      <div class="button_call-action">
+        <button class="button_item">
+          Fazer Reserva
+        </button>
+      </div>
+    </div>
+  </header>
+  <section class="container_menu-hamburguer">
+    <div class="container">
+      <nav class="menu_header">
+        <ul class="list_menu-header">
+          <li class="list_item-header"><a href="home.html">Home</a></li>
+          <li class="list_item-header"><a href="blog.html">Blog</a></li>
+          <li class="list_item-header"><a href="about.html">Sobre Nós</a></li>
+        </ul>
+      </nav>
+      <div class="button_call-action">
+        <button class="button_item">
+          Fazer Reserva </button>
+      </div>
+    </div>
+  </section>
+  <section id="popup_reserve" class="popup_reserve">
+    <span id="close-reservation">Fechar</span>
+    <div class="popup_container">
+      <img src="src/images/logo-red.svg" alt="Logo Apollo">
+      <div class="form_container">
+        <form id="form_hotel" action="">
+          <div class="name">
+            <label for="name"> Nome Completo </label>
+            <input type="text" name="name" placeholder="digite aqui" required>
+          </div>
+          <div class="check">
+            <div class="check-container">
+              <label for="check-in">Data de entrada</label>
+              <input type="date" id="check-in" name="check-in" required>
+            </div>
+            <div class="check-container">
+              <label for="check-out">Data de saída</label>
+              <input type="date" id="check-out" name="check-out" required>
+            </div>
+          </div>
+          <div class="accommodation">
+            <label for="equipe-f1">Escolha a sua equipe:</label>
+            <select name="equipe-f1" id="equipe-f1">
+              <option value="" disabled selected>Selecione uma equipe</option>
+              <option value="red-bull">Red Bull Racing</option>
+              <option value="mercedes">Mercedes-AMG PETRONAS</option>
+              <option value="ferrari">Scuderia Ferrari</option>
+              <option value="mclaren">McLaren Formula 1 Team</option>
+              <option value="aston-martin">Aston Martin Aramco</option>
+              <option value="alpine">Alpine F1 Team</option>
+              <option value="williams">Williams Racing</option>
+              <option value="rb">Visa Cash App RB (VCARB)</option>
+              <option value="sauber">Stake F1 Team Sauber</option>
+              <option value="haas">MoneyGram Haas F1 Team</option>
+              <option value="audi">Audi F1 Team</option>
+            </select>
+          </div>
+          <div class="number-people">
+            <div class="input-adult">
+              <label for="adult">Adultos</label>
+              <div class="border">
+                <button type="button" class="stepper-btn-menos-one" id="btn-menos">-</button>
+                <input type="number" name="amount-adult" id="input-adult">
+                <button type="button" class="stepper-btn-mais-one" id="btn-mais">+</button>
+              </div>
+            </div>
+            <div class="input-child">
+              <label for="child">Crianças</label>
+              <div class="border"> <button type="button" class="stepper-btn-menos-two" id="btn-menos">-</button>
+                <input type="number" name="amount-child" id="input-child">
+                <button type="button" class="stepper-btn-mais-two" id="btn-mais">+</button>
+              </div>
+            </div>
+
+          </div>
+          <fieldset class="reservation_restaurant">
+            <legend>Reservar Restaurante (opcional)</legend>
+            <div class="input_group">
+              <div class="dine date-dine">
+                <label for="restaurant-date">Data do Jantar</label>
+                <input type="date" id="restaurant-date" class="input_field">
+              </div>
+              <div class=" dine hour-dine">
+                <label for="restaurant-time">Horário</label>
+                <select id="restaurant-time">
+                  <option value="0">--:--</option>
+                  <option value="19:00">19:00</option>
+                  <option value="20:00">20:00</option>
+                  <option value="21:00">21:00</option>
+                  <option value="22:00">22:00</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+        <div class="button_call-action">
+          <button type="submit" form="form_hotel" class="button_item">
+            Fazer Reserva
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="overlay"></div>
+  <main id="blog">
+    <section class="banner">
+      <div class="container">
+        <h1 class="title">Destinos à dois perto de você</h1>
+        <h2 class="sub-title">Descubra refúgios exclusivos onde cada detalhe foi planejado para celebrar o amor</h2>
+        <div class="button_call-action">
+          <button class="button_item">
+            Fazer Reserva
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="cards">
+      <h3>Aproveite o melhor de Mônaco</h3>
+      <div class="container">
+        <div class="card">
+          <figure>
+            <img src="src/images/cards/image 10.png" alt="">
+            <figcaption>
+              <div class="caption-wrapper">
+                <h4>Noites de Gala em Monte Carlo</h3>
+                  <p>Experimente o ápice do luxo no coração de Mônaco...</p>
+                  <div class="bottom_caption-wrapper">
+                    <span class="date">03/04/2026</span>
+                    <button>Ler mais</button>
+                  </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="card">
+          <figure>
+            <img src="src/images/cards/image 10.png" alt="">
+            <figcaption>
+              <div class="caption-wrapper">
+                <h4>A Curva Mais Famosa do Mundo</h3>
+                  <p>Sinta a vibração dos motores da janela do seu quarto...</p>
+                  <div class="bottom_caption-wrapper">
+                    <span class="date">03/04/2026</span>
+                    <button>Ler mais</button>
+                  </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="card">
+          <figure>
+            <img src="src/images/cards/image 10.png" alt="">
+            <figcaption>
+              <div class="caption-wrapper">
+                <h4>Mônaco Além do Luxo: Um Roteiro de Descobertas</h4>
+                <p>Explore Monte Carlo como um verdadeiro conhecedor...</p>
+                <div class="bottom_caption-wrapper">
+                  <span class="date">03/04/2026</span>
+                  <button>Ler mais</button>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="card">
+          <figure>
+            <img src="src/images/cards/image 10.png" alt="">
+            <figcaption>
+              <div class="caption-wrapper">
+                <h4>Jantares sob as Estrelas de Monte Carlo</h4>
+                <p>Uma vista panorâmica do Mediterrâneo e um menu que desperta os sentidos. Descubra por que nosso terraço...</p>
+                <div class="bottom_caption-wrapper">
+                  <span class="date">03/04/2026</span>
+                  <button>Ler mais</button>
+                </div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container footer_container">
+      <div class="logo">
+        <img src="src/images/Logo.svg" alt="Logo Apollo Hotel">
+      </div>
+      <div class="footer_sub-container">
+        <ul class="footer_list">
+          <li class="list-item">
+            <img class="icone" src="src/images/icons/instagram.png" alt="icone instagram"> <a href="//www.instagram.com" target="_blank" title="instagram">
+              <p>@ApolloHotel</p>
+            </a>
+          </li>
+          <li class="list-item">
+            <img class="icone" src="src/images/icons/facebook.png" alt="icone facebook"> <a href="https://www.facebook.com/" target="_blank" title="facebook">
+              <p>ApolloHotel</p>
+            </a>
+          </li>
+        </ul>
+        <ul class="footer_list">
+          <li class="list-item">
+            <img class="icone" src="src/images/icons/phone.png" alt="icone phone">
+            <a class="link" href="tell:+37792506500" target="_blank" title="Phone number">
+              <p>+377 9250 - 6500</p>
+            </a>
+          </li>
+          <li class="list-item">
+            <img class="" src="src/images/icons/email.png" alt="icone email">
+            <a class="link" href="mailto:apollohotel@ejectufrn.com.br" target="_blank" title="E-mail">
+              <p>apollohotel@ejectufrn.com.br</p>
+            </a>
+          </li>
+          <li class="list-item">
+            <img class="icone" src="src/images/icons/map.png" alt="icone map">
+            <a href="https://share.google/6eSVSr0tfvhIuniUh" target="_blank" title="endereço">
+              <p>Pl. du Casino, 98000 Monaco, Mônaco</p>
+            </a>
+          </li>
+        </ul>
+        <div class="footer_map">
+          <iframe class="map-monaco" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.5966236452614!2d7.427328699999999!3d43.73970589999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cdc287e080300f%3A0xb530ebf7864a9e0a!2sPl.%20du%20Casino%2C%2098000%20Monaco%2C%20M%C3%B4naco!5e0!3m2!1spt-BR!2sbr!4v1775072805042!5m2!1spt-BR!2sbr" width="264" height="180" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        </div>
+      </div>
+      <div class="footer_bottom">
+        <span class="footer_line"></span>
+        <div class="copyright_container">
+          <small>2026 - MISSÃOEJECT</small>
+          <img src="src/images/logo-eject.svg" alt="Logo EJECT" class="eject_logo">
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="hotel.js"></script>
+
+</html>

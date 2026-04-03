@@ -1,3 +1,22 @@
+@media (max-width: 1000px) {
+  .history_container-image {
+    text-align: center;
+  }
+  .history_hotel .container {
+    flex-direction: column;
+  }
+}
+@media (max-width: 720px) {
+  #blog .banner .container .sub-title {
+    font-size: 3rem;
+  }
+  #blog .cards h3 {
+    font-size: 3rem;
+  }
+  #blog .card .caption-wrapper p {
+    font-size: 2rem;
+  }
+}
 @media (max-width: 900px) {
   header .list_menu-header,
   header .button_call-action {

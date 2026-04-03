@@ -93,6 +93,9 @@ select {
 .number-people .border {
   border: 2px solid var(--color-secondary-red);
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 .number-people .border button {
   font-size: 3rem;

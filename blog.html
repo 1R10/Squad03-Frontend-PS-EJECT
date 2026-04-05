@@ -9,6 +9,11 @@
   <link rel="stylesheet" href="src/css/blog.css">
   <link rel="stylesheet" href="src/css/cards.css">
   <link rel="stylesheet" href="src/css/responsive.css">
+  <link rel="stylesheet" href="src/css/reserve.css">
+  <link rel="stylesheet" href="src/css/menu-hamburguer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <title>Blog - Apollo Hotel</title>
 </head>
 
@@ -59,7 +64,7 @@
       </div>
     </div>
   </section>
-   <section id="popup_reserve" class="popup_reserve">
+  <section id="popup_reserve" class="popup_reserve">
     <span id="close-reservation">Fechar</span>
     <div class="logo-apollo">
       <h1>APOLLO</h1>
@@ -67,12 +72,12 @@
     </div>
     <div class="popup_container">
       <div class="form_container">
-        <form id="form_hotel" action="">
+        <form id="form_hotel" action="POST">
           <div class="name">
             <label for="name"> Nome Completo </label>
             <input type="text" name="name" placeholder="digite aqui" required>
           </div>
-             <div class="email">
+          <div class="email">
             <label for="email"> Digite seu Email </label>
             <input type="text" name="email" placeholder="digite aqui" required>
           </div>
@@ -152,12 +157,12 @@
         </div>
       </div>
     </div>
-        <div class="template_completion">
-        <span>Pedido de reserva concluido. Enviaremos uma mensagem de confirmação para o seu email!</span>
-        <br>
-        <br>
-        <span>Agradeçemos por escolher o Apollo Hotel!</span>
-      </div>
+    <div class="template_completion">
+      <span>Pedido de reserva concluido. Enviaremos uma mensagem de confirmação para o seu email!</span>
+      <br>
+      <br>
+      <span>Agradeçemos por escolher o Apollo Hotel!</span>
+    </div>
   </section>
   <div id="overlay"></div>
   <main id="blog">

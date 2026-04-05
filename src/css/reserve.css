@@ -1,6 +1,6 @@
 .popup_reserve {
   position: fixed;
-  background-color: var(--color-white);
+  background-color: var(--color-primary-text);
   width: 700px;
   max-width: 90%;
   height: 90%;
@@ -8,13 +8,24 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: space-around;
   z-index: 1002;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  overflow-y: scroll;
+  overflow-y: auto;
   border-radius: 20px;
+}
+.popup_reserve .logo-apollo {
+  margin-top: 100px;
+  display: inline-block;
+}
+.popup_reserve .logo-apollo h1 {
+  text-align: center;
+}
+.popup_reserve .logo-apollo h1,
+.popup_reserve .logo-apollo h2 {
+  color: var(--color-wine);
 }
 #close-reservation {
   position: fixed;
@@ -22,7 +33,9 @@
   top: 0;
   margin: 20px;
   font-size: 2rem;
-  color: var(--color-secondary-red);
+  color: var(--color-wine);
+  font-weight: 700;
+  text-transform: uppercase;
   z-index: 1002;
   cursor: pointer;
 }
@@ -43,16 +56,17 @@ form label {
   font-size: 2rem;
   margin-bottom: 5px;
   text-align: start;
-  color: var(--color-secondary-red);
+  color: var(--color-wine);
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
 }
 
 .name,
 .check-container,
-.accommodation {
+.accommodation, .email, .phone {
   display: flex;
   flex-direction: column;
 }
-
 .input_group,
 .check,
 .number-people {
@@ -70,7 +84,7 @@ form label {
 }
 .name,
 .check-container,
-.accommodation {
+.accommodation, .phone, .email {
   margin: 20px 0;
 }
 input,
@@ -80,7 +94,7 @@ select {
   border: 1px solid #ccc;
   font-size: 1.5rem;
   color: gray;
-  border: 2px solid var(--color-secondary-red);
+  border: 2px solid var(--color-wine);
 }
 
 .number-people input {
@@ -91,7 +105,8 @@ select {
   margin: 0 10px;
 }
 .number-people .border {
-  border: 2px solid var(--color-secondary-red);
+  border: 2px solid var(--color-wine);
+  background-color: #fff;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
@@ -121,13 +136,13 @@ input[type="number"] {
 .reservation_restaurant {
   margin: 25px 0 10px;
   padding: 10px;
-  border: 1px solid var(--color-secondary-red);
+  border: 1px solid var(--color-gold);
   border-radius: 10px;
 }
 .reservation_restaurant legend {
   font-size: 2rem;
   margin: 5px 0;
-  color: var(--color-secondary-red);
+  color: var(--color-wine);
 }
 
 .form_container .button_call-action {
@@ -135,4 +150,27 @@ input[type="number"] {
 }
 .form_container {
   padding: 10px 0;
+}
+.template_completion{
+  width: 80%;
+  display: none;
+  flex-direction: column;
+}
+.template_completion::before {
+  content: " ";
+  display: block;
+  background-color: var(--color-gold);
+  width: 70%;
+  height: 5px;
+  margin: 0 auto 30px ;
+}
+.template_completion span {
+  font-size: 3rem;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  color: var(--color-wine);
+  font-style: italic;
+}
+.template_completion span:not(:first-child) {
+  font-size: 2rem;
 }

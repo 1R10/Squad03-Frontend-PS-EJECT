@@ -9,15 +9,18 @@
   <link rel="stylesheet" href="src/css/responsive.css">
   <link rel="stylesheet" href="src/css/cards.css">
   <link rel="stylesheet" href="src/css/gallery.css">
-
+  <link rel"preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
   <title>Apollo Hotel</title>
 </head>
 
 <body>
   <header>
     <div class="container header_container">
-      <div class="logo">
-        <img src="src/images/Logo.svg" alt="Logo Hotel Apollo">
+      <div class="logo-apollo">
+        <h1>APOLLO</h1>
+        <h2>HOTEL</h2>
       </div>
       <nav class="menu_header">
         <ul class="list_menu-header">
@@ -45,7 +48,7 @@
     <div class="container">
       <nav class="menu_header">
         <ul class="list_menu-header">
-          <li class="list_item-header"><a href="home.html">Home</a></li>
+          <li class="list_item-header"><a href="index.html">Home</a></li>
           <li class="list_item-header"><a href="blog.html">Blog</a></li>
           <li class="list_item-header"><a href="about.html">Sobre Nós</a></li>
         </ul>
@@ -58,22 +61,33 @@
   </section>
   <section id="popup_reserve" class="popup_reserve">
     <span id="close-reservation">Fechar</span>
+    <div class="logo-apollo">
+      <h1>APOLLO</h1>
+      <h2>HOTEL</h2>
+    </div>
     <div class="popup_container">
-      <img src="src/images/logo-red.svg" alt="Logo Apollo">
       <div class="form_container">
         <form id="form_hotel" action="">
           <div class="name">
             <label for="name"> Nome Completo </label>
             <input type="text" name="name" placeholder="digite aqui" required>
           </div>
+          <div class="email">
+            <label for="email"> Digite seu Email </label>
+            <input type="text" name="email" placeholder="digite aqui" required>
+          </div>
+          <div class="phone">
+            <label for="phone">Digie telefone</label>
+            <input type="tel" id="phone" name="phone" placeholder="123-456-7890" required>
+          </div>
           <div class="check">
             <div class="check-container">
               <label for="check-in">Data de entrada</label>
-              <input type="date" id="check-in" name="check-in" min="2026-04-01" required>
+              <input type="date" id="check-in" name="check-in" required>
             </div>
             <div class="check-container">
               <label for="check-out">Data de saída</label>
-              <input type="date" id="check-out" name="check-out" min="2026-04-02" required>
+              <input type="date" id="check-out" name="check-out" required>
             </div>
           </div>
           <div class="accommodation">
@@ -132,19 +146,25 @@
           </fieldset>
         </form>
         <div class="button_call-action">
-          <button form="form_hotel" class="button_item">
+          <button id="reserve-button" form="form_hotel" class="button_item">
             Fazer Reserva
           </button>
         </div>
       </div>
+    </div>
+    <div class="template_completion">
+      <span>Pedido de reserva concluido. Enviaremos uma mensagem de confirmação para o seu email!</span>
+      <br>
+      <br>
+      <span>Agradeçemos por escolher o Apollo Hotel!</span>
     </div>
   </section>
   <div id="overlay"></div>
   <main id="index">
     <section class="banner">
       <div class="container">
-        <h1 class="title">Seu próximo hotel favorito</h1>
-        <h2 class="sub-title">No coração de Mônaco, torne <br> sua viagem inesquecível</h2>
+        <h2>Seu próximo hotel favorito</h2>
+        <h3>No coração de Mônaco, torne <br> sua viagem inesquecível</h3>
         <div class="button_call-action">
           <button class="button_item">
             Fazer Reserva
@@ -153,7 +173,7 @@
       </div>
     </section>
     <section class="cards">
-      <h3>Aproveite o melhor de Mônaco</h3>
+      <h3 class="subtitle-card">Aproveite o melhor de Mônaco</h3>
       <div class="container">
         <div class="card">
           <figure>
@@ -205,8 +225,9 @@
   </main>
   <footer>
     <div class="container footer_container">
-      <div class="logo">
-        <img src="src/images/Logo.svg" alt="Logo Apollo Hotel">
+      <div class="logo-apollo">
+        <h1>APOLLO</h1>
+        <h2>HOTEL</h2>
       </div>
       <div class="footer_sub-container">
         <ul class="footer_list">

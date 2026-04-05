@@ -5,49 +5,66 @@
   .history_hotel .container {
     flex-direction: column;
   }
+  .subtitle-card:not(#blog .subtitle-card) {
+    margin-bottom: 40px;
+  }
+  .subtitle-card {
+    text-align: center;
+  }
 }
 @media (max-width: 720px) {
-  #blog .banner .container .sub-title {
-    font-size: 3rem;
-  }
-  #blog .cards h3 {
+  #blog .banner .container h3 {
     font-size: 3rem;
   }
   #blog .card .caption-wrapper p {
     font-size: 2rem;
   }
+  .banner .container h2,
+  .cards h2,
+  #about .section_title h2 {
+    font-size: 3.5rem;
+    text-align: center;
+  }
+  .banner .container h3 {
+    margin-top: 20px;
+  }
+  .banner .container h3,
+  .cards h3:not(.subtitle-card),
+  #about .section_title h3 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .history_container-image {
+    text-align: center;
+  }
+  .history_container-image img {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 720px) and (max-width: 800px) {
+  .banner .container h3,
+  .cards h3,
+  #about .section_title h3 {
+    font-size: 4rem;
+  }
+  .banner .container h3 {
+    margin-top: 20px;
+  }
+  .banner .container h3,
+  .cards h3,
+  #about .section_title h3 {
+    font-size: 3rem;
+    text-align: center;
+  }
 }
 @media (max-width: 900px) {
-  header .list_menu-header,
+  header nav .list_menu-header,
   header .button_call-action {
     display: none;
   }
   .menu_hamburguer {
     display: block;
-  }
-  .hamburguer_icon {
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-  }
-  .hamburguer_icon span:not(:last-child) {
-    display: block;
-    width: 30px;
-    height: 2px;
-    background-color: var(--color-white);
-    border: none;
-    margin: 10px;
-    border: 2px solid var(--color-white);
-    text-align: center;
-  }
-  .hamburguer_icon span:hover {
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
-    transform: translateY(-2px);
-  }
-  .hamburguer_icon #cancel {
-    display: none;
-    font-size: 4rem;
-    color: var(--color-white);
   }
 }
 @media (max-width: 800px) {
@@ -58,17 +75,19 @@
     display: block;
     width: 100%;
   }
-  .banner .container .title {
-    font-size: 3.5rem;
-  }
-  .banner .container .sub-title {
-    font-size: 2rem;
+
+  .gallery_container {
+    flex-direction: column;
+    justify-content: center;
   }
   .footer_sub-container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 30px 0;
+  }
+  footer {
+    text-align: center;
   }
   .footer_list {
     display: flex;

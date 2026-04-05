@@ -6,7 +6,10 @@ const containerMenuHamburguer = document.querySelector(
 );
 const closeReservation = document.getElementById("close-reservation");
 const popupReserve = document.getElementById("popup_reserve");
-const buttonCallAtion = document.querySelectorAll(".button_call-action button");
+
+const buttonCallAction = document.querySelectorAll(
+  ".button_call-action button",
+);
 const overlay = document.getElementById("overlay");
 const header = document.querySelector("header");
 
@@ -33,6 +36,12 @@ function openReserve() {
   popupReserve.style.display = "flex";
   overlay.style.display = "flex";
   header.style.zIndex = "1000";
+  if (containerMenuHamburguer.style.display === "flex") {
+    containerMenuHamburguer.style.display = "none";
+    cancel.style.display = "none";
+    icon.forEach((item) => (item.style.display = "flex"));
+    // if que diz pro hamburguer fechar ao abrir o form reserve
+  }
 }
 function closeReserve() {
   popupReserve.style.display = "none";
@@ -41,7 +50,8 @@ function closeReserve() {
 }
 hamburguerButton.addEventListener("click", clickHambuguer);
 closeReservation.addEventListener("click", closeReserve);
-buttonCallAtion.forEach((btn) => {
+
+buttonCallAction.forEach((btn) => {
   btn.addEventListener("click", () => {
     openReserve();
   });
@@ -95,11 +105,12 @@ function slide() {
 setInterval(slide, 5000);
 
 const inputDate = document.querySelectorAll('input[type="date"]');
-
-const checkin = document.querySelector('input[name="checkin"]');
-const checkout = document.querySelector('input[name="checkout"]');
-
-const buttonSubmit = document.querySelector('button[type="submit"]');
+const dataCheckin = document.getElementById("check-in");
+const restaurantDate = document.getElementById("restaurant-date");
+const dataCheckout = document.getElementById("check-out");
+const popupContainer = document.querySelector(".popup_container");
+const templateCompletion = document.querySelector(".template_completion");
+const restaurantTime = document.getElementById("restaurant-time");
 
 const clean = () => {
   inputDate.forEach((input) => {
@@ -107,23 +118,46 @@ const clean = () => {
   });
 };
 function inputsDate() {
-
   const dataAtual = new Date();
   dataAtual.setHours(0, 0, 0, 0);
 
-  const dataCheckin = new Date(checkin.value);
-  const dataCheckout = new Date(checkout.value);
+  checkin = new Date(dataCheckin.value + "T00:00:00");
+  checkout = new Date(dataCheckout.value + "T00:00:00");
+  restaurant = new Date(restaurantDate.value + "T00:00:00");
 
-  if (dataCheckin < dataAtual || dataCheckout < dataAtual) {
-    alert("Data de check-in inválida!");
+  if (checkin < dataAtual) {
+    alert("Data de check-in inválida! Escolha uma data para o futuro.");
     clean();
-    return
+    return false;
   }
-  if (dataCheckout < dataCheckin) {
-    alert("Data de check-out inválida!");
+  if (checkout < checkin) {
+    alert(
+      "Data de check-out inválida! Escolha uma data posterior ao Check-in.",
+    );
     clean();
-    return
+    return false;
+  }
+  if (restaurant !== "" && restaurantTime.value === "0") {
+    restaurantTime.required = true;
+    alert("Ops! Escolha uma data para a sua reserva no Restaurante.");
+    return false;
+  }
+
+  if (restaurant < dataAtual) {
+    alert(
+      "Ops! Data do restaurante inválida! Não é possível escolher uma data para o passado.",
+    );
+    clean();
+    return false;
+  }
+  return true;
+}
+function showConfirmationReserve(event) {
+  event.preventDefault(); // Impede o recarregamento da página
+  if (inputsDate()) {
+    popupContainer.style.display = "none";
+    templateCompletion.style.display = "flex";
   }
 }
-
-buttonSubmit.addEventListener("click", inputsDate);
+const buttonSubmit = document.getElementById("reserve-button");
+buttonSubmit.addEventListener("click", showConfirmationReserve);

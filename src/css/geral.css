@@ -6,16 +6,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Crimson Pro";
   text-decoration: none;
   font-size: 62.5%;
 }
 
 :root {
-  --color-primary-red: #8c3933;
-  --color-secondary-red: #54221e;
-  --color-rose: #f2a49e;
-  --color-white: #fff;
+  --color-primary-text: #cbc7c0;
+  --color-wine: #560319;
+  --color-brown: #442f22;
+  --color-gold: #8f773c;
 }
 #overlay {
   position: fixed;
@@ -29,12 +28,6 @@
   display: none;
   cursor: pointer;
 }
-header,
-html,
-footer,
-section {
-  color: var(--color-white);
-}
 a {
   color: inherit;
 }
@@ -44,13 +37,30 @@ a {
   width: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary-red);
+  background: var(--color-wine);
   border-radius: 10px;
 }
 /* Para Firefox */
 * {
-  scrollbar-color: var(--color-primary-red) #f1f1f1;
+  scrollbar-color: var(--color-wine) #f1f1f1;
   scrollbar-width: thin;
+}
+h2 {
+  font-size: 6rem;
+  font-style: italic;
+  font-weight: 700;
+}
+h2:not(.team h2) {
+  color: var(--color-primary-text);
+}
+h3 {
+  font-size: 4rem;
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: 3px;
+  padding: 0;
+  font-family: "Cinzel", serif;
+  color: var(--color-primary-text);
 }
 .menu_hamburguer,
 .container_menu {
@@ -66,32 +76,72 @@ a {
   align-items: center;
 }
 header {
-  background-color: var(--color-primary-red);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  border-bottom: none;
   width: 100%;
   height: 90px;
   z-index: 1002;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: none;
 }
-.logo {
-  width: 126.837px;
-  height: 56px;
+header .container {
+  margin: 0 auto;
+  margin-top: 5px;
 }
-.list_menu-header {
+.logo-apollo {
+  text-align: right;
+  line-height: 1;
+}
+
+.logo-apollo h1 {
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  font-size: 4rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-primary-text);
+}
+
+.logo-apollo h2 {
+  color: var(--color-primary-text);
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+nav .list_menu-header {
   display: flex;
   justify-content: center;
   gap: 60px;
   font-size: 7rem;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-family: "Cinzel", serif;
+  color: var(--color-primary-text);
 }
-li:hover {
-  color: var(--color-white);
+li:hover,
+.logo-apollo:hover {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
-.button_item {
-  background-color: var(--color-secondary-red);
+.button_call-action .button_item {
+  background-color: var(--color-wine);
+  color: var(--color-primary-text);
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0 0 10px rgba(86, 3, 25, 0.4);
+  border: none;
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 1px;
@@ -100,14 +150,16 @@ li:hover {
   align-items: center;
   gap: 10px;
   border-radius: 10px;
-  border: none;
-  min-width: 183.35px;
+  min-width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .button_item:hover {
   opacity: 0.7;
 }
 footer {
-  background-color: var(--color-secondary-red);
+  background-color: var(--color-brown);
+  background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
+  color: var(--color-primary-text);
 }
 .footer_container {
   display: block;
@@ -115,6 +167,9 @@ footer {
 }
 footer a {
   font-size: 2.5rem;
+}
+footer .logo-apollo {
+  display: inline-block;
 }
 .footer_sub-container {
   display: flex;
@@ -138,6 +193,7 @@ footer a {
 }
 .footer_list .list-item:hover {
   text-decoration: underline;
+  color: var(--color-gold);
 }
 .footer_bottom {
   padding-top: 20px;
@@ -147,7 +203,7 @@ footer a {
   display: block;
   width: 289px;
   height: 2px;
-  background-color: var(--color-white);
+  background-color: var(--color-gold);
   border: none;
   margin: 0 auto;
 }

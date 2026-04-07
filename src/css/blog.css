@@ -119,6 +119,11 @@
 #content-blog .container {
   background-color: var(--color-primary-text);
 }
+
+#body-blog footer {
+  background-color: var(--color-wine);
+}
+
 #content-blog .title_blog {
   color: var(--color-brown);
   font-size: 4rem;

@@ -137,9 +137,9 @@ function inputsDate() {
     clean();
     return false;
   }
-  if (restaurant !== "" && restaurantTime.value === "0") {
+  if (restaurantDate.value !== "" && restaurantTime.value === "0") {
     restaurantTime.required = true;
-    alert("Ops! Escolha uma data para a sua reserva no Restaurante.");
+    alert("Ops! Escolha um horário para a sua reserva no Restaurante.");
     return false;
   }
 

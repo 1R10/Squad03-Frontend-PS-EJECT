@@ -2,6 +2,7 @@
   background-color: #442f22;
   background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
   text-align: center;
+  padding-top: 50px;
 }
 .gallery_container {
   display: flex;

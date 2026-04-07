@@ -11,6 +11,9 @@
   .subtitle-card {
     text-align: center;
   }
+  #content-blog .caption-image {
+    flex-direction: column;
+  }
 }
 @media (max-width: 720px) {
   #blog .banner .container h3 {

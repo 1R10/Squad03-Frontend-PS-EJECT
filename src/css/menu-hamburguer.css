@@ -6,7 +6,6 @@
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  opacity: 0.8;
   z-index: 1001;
   width: 50%;
   max-height: 100vh;

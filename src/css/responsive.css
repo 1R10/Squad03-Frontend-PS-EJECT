@@ -18,7 +18,7 @@
 @media (min-width: 901px) and (max-width: 1100px) {
   header nav .list_menu-header,
   .container_menu-hamburguer .button_call-action {
-    display: none;
+    display: none; 
   }
   header .button_call-action,
   #hamburguer-main {

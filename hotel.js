@@ -2,28 +2,40 @@ const hamburguerButton = document.getElementById("hamburguer_button");
 const containerMenuHamburguer = document.querySelector(
   ".container_menu-hamburguer",
 );
+const icon = document.querySelectorAll(".icon");
+
 const cancel = document.getElementById("cancel");
-
-const closeReservation = document.getElementById("close-reservation");
 const popupReserve = document.getElementById("popup_reserve");
-
-const buttonCallAction = document.querySelectorAll(
-  ".button_call-action button",
+const popupReserveRestaurant = document.querySelector(
+  ".popup_reserve-restaurant",
 );
+
 const overlay = document.getElementById("overlay");
 const header = document.querySelector("header");
 
 window.addEventListener("resize", () => {
-  window.location.reload();
+  const menuHamburguer = document.querySelector(".container_menu-hamburguer");
+  const larguraDesktop = 1100;
+
+  if (window.innerWidth >= larguraDesktop) {
+    if (menuHamburguer) {
+      menuHamburguer.style.display = "none";
+      cancel.style.display = "none";
+      icon.forEach((item) => {
+        item.style.display = "flex";
+      });
+      overlay.style.display = "none";
+    }
+  }
 });
 
 let open = true;
 
 function clickHambuguer() {
-  const icon = document.querySelectorAll(".icon");
-
   if (open === true) {
-    icon.forEach((item) => (item.style.display = "none"));
+    icon.forEach((item) => {
+      item.style.display = "none";
+    });
     cancel.style.display = "block";
     containerMenuHamburguer.style.display = "flex";
     overlay.style.display = "flex";
@@ -38,6 +50,8 @@ function clickHambuguer() {
     open = true;
   }
 }
+hamburguerButton.addEventListener("click", clickHambuguer);
+
 function openReserve() {
   popupReserve.style.display = "flex";
   overlay.style.display = "flex";
@@ -45,23 +59,120 @@ function openReserve() {
   if (containerMenuHamburguer.style.display === "flex") {
     containerMenuHamburguer.style.display = "none";
     cancel.style.display = "none";
-    icon.forEach((item) => (item.style.display = "flex"));
+    icon.forEach((item) => {
+      item.style.display = "flex";
+    });
     // if que diz pro hamburguer fechar ao abrir o form reserve
   }
 }
 function closeReserve() {
   popupReserve.style.display = "none";
+  popupReserveRestaurant.style.display = "none";
   overlay.style.display = "none";
   header.style.zIndex = "1002";
 }
-hamburguerButton.addEventListener("click", clickHambuguer);
-closeReservation.addEventListener("click", closeReserve);
-
+const buttonCallAction = document.querySelectorAll(".btn_reserve_menu");
 buttonCallAction.forEach((btn) => {
   btn.addEventListener("click", () => {
     openReserve();
   });
 });
+const buttonCloseReserve = document.querySelectorAll(".close-reserve");
+buttonCloseReserve.forEach((close) => {
+  close.addEventListener("click", () => {
+    closeReserve();
+  });
+});
+
+const buttonReserveRestaurant = document.getElementById(
+  "button-open-form-restaurant",
+);
+function openReserveRestaurant() {
+  popupReserveRestaurant.style.display = "flex";
+  overlay.style.display = "flex";
+}
+buttonReserveRestaurant.addEventListener("click", openReserveRestaurant);
+
+const inputDate = document.querySelectorAll('input[type="date"]');
+const dataCheckin = document.getElementById("check-in");
+const dataCheckout = document.getElementById("check-out");
+const restaurantDate = document.getElementById("restaurant-date");
+const popupContainer = document.getElementById("popup_container");
+const popupContainerRestaurant = document.getElementById(
+  "popup_container_restaurant",
+);
+const templateReserve = document.querySelectorAll("template_reserve");
+const templateRestaurant = document.getElementById("template_restaurant");
+const restaurantTime = document.getElementById("restaurant-time");
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+/*verificação dos inputs e tamplate de confirmação de envio*/
+
+const clean = () => {
+  inputDate.forEach((input) => {
+    input.value = "";
+  });
+};
+const dataAtual = new Date();
+dataAtual.setHours(0, 0, 0, 0);
+
+function inputsDate() {
+  checkin = new Date(dataCheckin.value + "T00:00:00");
+  checkout = new Date(dataCheckout.value + "T00:00:00");
+
+  if (checkin < dataAtual) {
+    alert("Data de check-in inválida! Escolha uma data para o futuro.");
+    clean();
+    return false;
+  }
+  if (checkout < checkin) {
+    alert(
+      "Data de check-out inválida! Escolha uma data posterior ao Check-in.",
+    );
+    clean();
+    return false;
+  }
+  return true;
+}
+function inputsRestaurant() {
+  restaurant = new Date(restaurantDate.value + "T00:00:00");
+
+  if (restaurantDate.value !== "" && restaurantTime.value === "0") {
+    restaurantTime.required = true;
+    alert("Ops! Escolha um horário para a sua reserva no Restaurante.");
+    return false;
+  }
+
+  if (restaurant < dataAtual) {
+    alert(
+      "Ops! Data do restaurante inválida! Não é possível escolher uma data para o passado.",
+    );
+    clean();
+    return false;
+  }
+  return true;
+}
+const formHotel = document.getElementById("form_hotel");
+formHotel.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (inputsDate() && inputsRestaurant()) {
+    popupContainer.style.display = "none";
+    templateReserve.forEach((template) => {
+      template.style.display = "flex";
+    });
+  }
+});
+
+const formRest = document.getElementById("res_form_hotel");
+formRest.addEventListener("submit", (event) => {
+  event.preventDefault();
+  if (inputsRestaurant()) {
+    popupContainerRestaurant.style.display = "none";
+    templateRestaurant.style.display = "flex";
+  }
+});
+
+/*-----------------------------------------------------------------------------------------------------------------------------------*/
+/*incremento e decrementação dos inputs para os formulários*/
 
 const btnMenosAdult = document.querySelector(".stepper-btn-menos-one");
 const btnMaisAdult = document.querySelector(".stepper-btn-mais-one");
@@ -71,8 +182,11 @@ const btnMenosChild = document.querySelector(".stepper-btn-menos-two");
 const btnMaisChild = document.querySelector(".stepper-btn-mais-two");
 const inputTwo = document.getElementById("input-child");
 
-let limit = 0;
+const inputPeopleRestaurant = document.getElementById("input-people");
+const btnMenos = document.querySelector(".stepper-btn-menos");
+const btnMais = document.querySelector(".stepper-btn-mais");
 
+let limit = 0;
 function increase(input) {
   let valor = Number(input.value) || 0;
   if (limit < 4) {
@@ -97,7 +211,6 @@ function decrement(input) {
     limit -= 1;
   }
 }
-
 btnMenosAdult.addEventListener("click", () => {
   decrement(inputOne);
 });
@@ -110,6 +223,16 @@ btnMenosChild.addEventListener("click", () => {
 btnMaisChild.addEventListener("click", () => {
   increase(inputTwo);
 });
+btnMenos.addEventListener("click", () => {
+  decrement(inputPeopleRestaurant);
+  console.log("apertou menos");
+});
+
+btnMais.addEventListener("click", () => {
+  increase(inputPeopleRestaurant);
+  console.log("apertou mais");
+});
+/*-----------------------------------------------------------------------------------------------------------------------------*/
 
 const slider = document.getElementById("slider");
 const img = document.querySelectorAll(".slider figure");
@@ -125,61 +248,3 @@ function slide() {
   slider.style.transform = `translateX(${-cont * 1005}px)`;
 }
 setInterval(slide, 5000);
-
-const inputDate = document.querySelectorAll('input[type="date"]');
-const dataCheckin = document.getElementById("check-in");
-const restaurantDate = document.getElementById("restaurant-date");
-const dataCheckout = document.getElementById("check-out");
-const popupContainer = document.querySelector(".popup_container");
-const templateCompletion = document.querySelector(".template_completion");
-const restaurantTime = document.getElementById("restaurant-time");
-
-const clean = () => {
-  inputDate.forEach((input) => {
-    input.value = "";
-  });
-};
-function inputsDate() {
-  const dataAtual = new Date();
-  dataAtual.setHours(0, 0, 0, 0);
-
-  checkin = new Date(dataCheckin.value + "T00:00:00");
-  checkout = new Date(dataCheckout.value + "T00:00:00");
-  restaurant = new Date(restaurantDate.value + "T00:00:00");
-
-  if (checkin < dataAtual) {
-    alert("Data de check-in inválida! Escolha uma data para o futuro.");
-    clean();
-    return false;
-  }
-  if (checkout < checkin) {
-    alert(
-      "Data de check-out inválida! Escolha uma data posterior ao Check-in.",
-    );
-    clean();
-    return false;
-  }
-  if (restaurantDate.value !== "" && restaurantTime.value === "0") {
-    restaurantTime.required = true;
-    alert("Ops! Escolha um horário para a sua reserva no Restaurante.");
-    return false;
-  }
-
-  if (restaurant < dataAtual) {
-    alert(
-      "Ops! Data do restaurante inválida! Não é possível escolher uma data para o passado.",
-    );
-    clean();
-    return false;
-  }
-  return true;
-}
-function showConfirmationReserve(event) {
-  event.preventDefault(); // Impede o recarregamento da página
-  if (inputsDate()) {
-    popupContainer.style.display = "none";
-    templateCompletion.style.display = "flex";
-  }
-}
-const buttonSubmit = document.getElementById("reserve-button");
-buttonSubmit.addEventListener("click", showConfirmationReserve);

@@ -71,6 +71,7 @@ h3 {
 .container_menu {
   display: none;
 }
+
 .container /*Container geral*/ {
   padding: 15px 20px;
   margin: 0 auto;
@@ -140,7 +141,8 @@ li:hover,
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
   transform: translateY(-2px);
 }
-.button_call-action .button_item {
+.button_call-action .button_item,
+.button_call-action-restaurant .button_item {
   background-color: var(--color-wine);
   color: var(--color-primary-text);
   font-family: "Montserrat", sans-serif;
@@ -160,7 +162,6 @@ li:hover,
 .button_item:hover {
   opacity: 0.7;
 }
-
 
 footer {
   background-color: var(--color-brown);

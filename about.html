@@ -33,8 +33,8 @@
         </ul>
       </nav>
       <div class="container_menu-button">
-        <div class="button_call-action">
-          <button class="button_item">
+         <div class="button_call-action">
+          <button class="button_item btn_reserve_menu">
             Fazer Reserva
           </button>
         </div>
@@ -58,10 +58,11 @@
           <li class="list_item-header"><a href="about.html">Sobre Nós</a></li>
         </ul>
       </nav>
-      <div class="button_call-action">
-        <button class="button_item">
-          Fazer Reserva </button>
-      </div>
+       <div class="button_call-action">
+          <button class="button_item btn_reserve_menu">
+            Fazer Reserva
+          </button>
+        </div>
     </div>
   </section>
   <section id="popup_reserve" class="popup_reserve">
@@ -70,7 +71,7 @@
       <h1>APOLLO</h1>
       <h2>HOTEL</h2>
     </div>
-    <div class="popup_container">
+    <div class="popup_container" id="popup_container">
       <div class="form_container">
         <form id="form_hotel" action="POST">
           <div class="name">
@@ -116,16 +117,16 @@
             <div class="input-adult">
               <label for="adult">Adultos</label>
               <div class="border">
-                <button type="button" class="stepper-btn-menos-one" id="btn-menos">-</button>
-                <input type="number" name="amount-adult" id="input-adult" required>
-                <button type="button" class="stepper-btn-mais-one" id="btn-mais">+</button>
+                <button type="button" class="stepper-btn-menos-one">-</button>
+                <input type="number" name="amount-adult" id="input-adult">
+                <button type="button" class="stepper-btn-mais-one">+</button>
               </div>
             </div>
             <div class="input-child">
               <label for="child">Crianças</label>
-              <div class="border"> <button type="button" class="stepper-btn-menos-two" id="btn-menos">-</button>
+              <div class="border"> <button type="button" class="stepper-btn-menos-two">-</button>
                 <input type="number" name="amount-child" id="input-child">
-                <button type="button" class="stepper-btn-mais-two" id="btn-mais">+</button>
+                <button type="button" class="stepper-btn-mais-two">+</button>
               </div>
             </div>
 
@@ -139,7 +140,7 @@
               </div>
               <div class=" dine hour-dine">
                 <label for="restaurant-time">Horário</label>
-                <select name="restaurant-time" id="restaurant-time">
+                <select id="restaurant-time" name="restaurant-time">
                   <option value="0">--:--</option>
                   <option value="19:00">19:00</option>
                   <option value="20:00">20:00</option>
@@ -151,13 +152,13 @@
           </fieldset>
         </form>
         <div class="button_call-action">
-          <button id="reserve-button" form="form_hotel" class="button_item">
-            Fazer Reserva
+          <button type="submit" id="reserve-button" form="form_hotel" class="button_item">
+            Reservar
           </button>
         </div>
       </div>
     </div>
-    <div class="template_completion">
+    <div class="template_completion template_reserve">
       <span>Pedido de reserva concluido. Enviaremos uma mensagem de confirmação para o seu email!</span>
       <br>
       <br>

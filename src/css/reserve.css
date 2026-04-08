@@ -1,33 +1,42 @@
+#popup_reserve {
+  display: none;
+}
 .popup_reserve {
   position: fixed;
-  background-color: var(--color-primary-text);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 700px;
   max-width: 90%;
   height: 90%;
-  display: none;
+}
+.popup_reserve,
+.popup_reserve-restaurant {
+  background-color: var(--color-primary-text);
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: space-around;
   z-index: 1002;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   overflow-y: auto;
   border-radius: 20px;
 }
-.popup_reserve .logo-apollo {
+.popup_reserve .logo-apollo,
+.popup_reserve-restaurant .logo-apollo {
   margin-top: 100px;
   display: inline-block;
 }
-.popup_reserve .logo-apollo h1 {
+.popup_reserve .logo-apollo h1,
+.popup_reserve-restaurant .logo-apollo h1 {
   text-align: center;
 }
 .popup_reserve .logo-apollo h1,
-.popup_reserve .logo-apollo h2 {
+.popup_reserve-restaurant .logo-apollo h1,
+.popup_reserve .logo-apollo h2,
+.popup_reserve-restaurant .logo-apollo h2 {
   color: var(--color-wine);
 }
-#close-reservation {
+.close-reserve {
   position: fixed;
   right: 0;
   top: 0;
@@ -36,8 +45,9 @@
   color: var(--color-wine);
   font-weight: 700;
   text-transform: uppercase;
-  z-index: 1002;
   cursor: pointer;
+  border: none;
+  background: transparent;
 }
 .popup_container {
   height: 95%;
@@ -51,7 +61,6 @@ form {
   width: 80%;
   margin: 0 auto;
 }
-
 form label {
   font-size: 2rem;
   margin-bottom: 5px;
@@ -63,7 +72,9 @@ form label {
 
 .name,
 .check-container,
-.accommodation, .email, .phone {
+.accommodation,
+.email,
+.phone {
   display: flex;
   flex-direction: column;
 }
@@ -84,7 +95,9 @@ form label {
 }
 .name,
 .check-container,
-.accommodation, .phone, .email {
+.accommodation,
+.phone,
+.email {
   margin: 20px 0;
 }
 input,
@@ -151,7 +164,7 @@ input[type="number"] {
 .form_container {
   padding: 10px 0;
 }
-.template_completion{
+.template_completion {
   width: 80%;
   display: none;
   flex-direction: column;
@@ -162,7 +175,7 @@ input[type="number"] {
   background-color: var(--color-gold);
   width: 70%;
   height: 5px;
-  margin: 0 auto 30px ;
+  margin: 0 auto 30px;
 }
 .template_completion span {
   font-size: 3rem;

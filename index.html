@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="src/css/gallery.css">
   <link rel="stylesheet" href="src/css/reserve.css">
   <link rel="stylesheet" href="src/css/menu-hamburguer.css">
+  <link rel="stylesheet" href="src/css/restaurant.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
@@ -35,7 +36,7 @@
       </nav>
       <div class="container_menu-button">
         <div class="button_call-action">
-          <button class="button_item">
+          <button class="button_item btn_reserve_menu">
             Fazer Reserva
           </button>
         </div>
@@ -60,18 +61,19 @@
         </ul>
       </nav>
       <div class="button_call-action">
-        <button class="button_item">
-          Fazer Reserva </button>
+        <button class="button_item btn_reserve_menu">
+          Fazer Reserva
+        </button>
       </div>
     </div>
   </section>
   <section id="popup_reserve" class="popup_reserve">
-    <span id="close-reservation">Fechar</span>
+    <button class="close-reserve" id="close-reserve">Fechar</button>
     <div class="logo-apollo">
       <h1>APOLLO</h1>
       <h2>HOTEL</h2>
     </div>
-    <div class="popup_container">
+    <div class="popup_container" id="popup_container">
       <div class="form_container">
         <form id="form_hotel" action="POST">
           <div class="name">
@@ -117,16 +119,16 @@
             <div class="input-adult">
               <label for="adult">Adultos</label>
               <div class="border">
-                <button type="button" class="stepper-btn-menos-one" id="btn-menos">-</button>
+                <button type="button" class="stepper-btn-menos-one">-</button>
                 <input type="number" name="amount-adult" id="input-adult">
-                <button type="button" class="stepper-btn-mais-one" id="btn-mais">+</button>
+                <button type="button" class="stepper-btn-mais-one">+</button>
               </div>
             </div>
             <div class="input-child">
               <label for="child">Crianças</label>
-              <div class="border"> <button type="button" class="stepper-btn-menos-two" id="btn-menos">-</button>
+              <div class="border"> <button type="button" class="stepper-btn-menos-two">-</button>
                 <input type="number" name="amount-child" id="input-child">
-                <button type="button" class="stepper-btn-mais-two" id="btn-mais">+</button>
+                <button type="button" class="stepper-btn-mais-two">+</button>
               </div>
             </div>
 
@@ -152,13 +154,13 @@
           </fieldset>
         </form>
         <div class="button_call-action">
-          <button id="reserve-button" form="form_hotel" class="button_item">
-            Fazer Reserva
+          <button type="submit" id="reserve-button" form="form_hotel" class="button_item">
+            Reservar
           </button>
         </div>
       </div>
     </div>
-    <div class="template_completion">
+    <div class="template_completion template_reserve">
       <span>Pedido de reserva concluido. Enviaremos uma mensagem de confirmação para o seu email!</span>
       <br>
       <br>
@@ -172,7 +174,7 @@
         <h2>Seu próximo hotel favorito</h2>
         <p class="introduction">No coração de Mônaco, torne <br> sua viagem inesquecível</p>
         <div class="button_call-action">
-          <button class="button_item">
+          <button class="button_item btn_reserve_menu">
             Fazer Reserva
           </button>
         </div>
@@ -199,6 +201,83 @@
             <figcaption>Entretenimento</figcaption>
           </figure>
         </div>
+      </div>
+    </section>
+    <section class="restaurant">
+      <div class="container">
+        <h3>restaurante Apollo Hotel</h3>
+        <section class="call_of_restaurant">
+          <div class="container-call_of_restaurant">
+            <p> Venha Jantar em nosso delícioso restaurant e conhecer a culínária de Mônaco! Reserve aqui: </p>
+            <div id="button-open-form-restaurant" class="button_call-action-restaurant">
+              <button class="button_item">
+                Fazer Reserva
+              </button>
+            </div>
+        </section>
+        <section id="popup_reserve" class="popup_reserve popup_reserve-restaurant">
+          <button class="close-reserve" id="close-restarant">Fechar</button>
+          <div class="logo-apollo">
+            <h1>APOLLO</h1>
+            <h2>HOTEL</h2>
+          </div>
+          <div class="popup_container" id="popup_container_restaurant">
+            <div class="form_container">
+              <form id="res_form_hotel" action="POST">
+                <fieldset class="name-and-email">
+                  <div class="name">
+                    <label for="name">Nome completo </label>
+                    <input type="text" name="restaurant-name" placeholder="digite aqui" required>
+                  </div>
+                  <div class="email">
+                    <label for="email">E-mail </label>
+                    <input type="text" name="restaurant-email" placeholder="digite aqui" required>
+                  </div>
+                  <div class="number-people">
+                    <div class="input-people">
+                      <label for="people">Qtd pessoas </label>
+                      <div class="border">
+                        <button type="button" class="stepper-btn-menos" id="btn-menos">-</button>
+                        <input type="number" name="qtd-people" id="input-people" min="1">
+                        <button type="button" class="stepper-btn-mais" id="btn-mais">+</button>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+                <fieldset class="reservation_restaurant">
+                  <div class="input_group">
+                    <div class="dine date-dine">
+                      <label for="restaurant-date">Data do Jantar</label>
+                      <input type="date" name="reserve-restaurant-date" id="reserve-restaurant-date" class="input_field" required>
+                    </div>
+                    <div class=" dine hour-dine">
+                      <label for="restaurant-time">Horário</label>
+                      <select id="reserve-restaurant-time" name="reserve-restaurant-time" required>
+                        <option value="">--:--</option>
+                        <option value="19:00">19:00</option>
+                        <option value="20:00">20:00</option>
+                        <option value="21:00">21:00</option>
+                        <option value="22:00">22:00</option>
+                      </select>
+                    </div>
+                  </div>
+                </fieldset>
+                <div class="button_call-action-restaurant">
+                  <button type="submit" form="res_form_hotel" id="reserve-button-restaurant" class="button_item">
+                    Reservar
+                  </button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+          <div class="template_completion" id="template_restaurant">
+            <span>Pedido de reserva concluido. Enviaremos uma mensagem de confirmação para o seu email!</span>
+            <br>
+            <br>
+            <span>Agradeçemos por escolher o Rataurante Apollo Hotel!</span>
+          </div>
+        </section>
       </div>
     </section>
     <section class="gallery">

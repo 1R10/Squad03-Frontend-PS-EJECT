@@ -1,0 +1,69 @@
+.restaurant {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("/src/images/restaurant.jpg");
+  background-attachment: fixed;
+  height: 80vh;
+  position: relative;
+  padding: 30px 0;
+}
+.restaurant h3 {
+  color: var(--color-wine);
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  background-color: var(--color-primary-text);
+  width: 100%;
+  text-align: center;
+}
+.template {
+  display: none;
+}
+#popup_container_restaurant {
+  display: flex;
+  flex-wrap: wrap;
+}
+.popup_reserve-restaurant {
+  z-index: 2000;
+  padding: 10px;
+}
+.call_of_restaurant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-wine);
+  font-size: 6rem;
+  font-weight: 500;
+  color: var(--color-primary-text);
+  font-family: "Cinzel", serif;
+  padding: 20px;
+  max-width: 20ch;
+  border: 2px groove;
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+.container-call_of_restaurant .button_call-action-restaurant button {
+  background-color: var(--color-primary-text);
+  color: var(--color-wine);
+  margin-top: 20px;
+}
+.popup_reserve-restaurant form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  height: auto;
+}
+.popup_reserve-restaurant .name-and-email {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  align-items: center;
+  gap: 10px;
+}
+.popup_reserve-restaurant .reservation_restaurant {
+  width: 100%;
+  border: 2px groove;
+}

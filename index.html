@@ -21,8 +21,10 @@
   <header>
     <div class="container header_container">
       <div class="logo-apollo">
-        <h1>APOLLO</h1>
-        <h2>HOTEL</h2>
+        <a href="index.html">
+          <h1>APOLLO</h1>
+          <h2>HOTEL</h2>
+        </a>
       </div>
       <nav class="menu_header">
         <ul class="list_menu-header">
@@ -30,7 +32,14 @@
           <li class="list_item-header"><a href="blog.html">Blog</a></li>
           <li class="list_item-header"><a href="about.html">Sobre Nós</a></li>
         </ul>
-        <div class="menu_hamburguer">
+      </nav>
+      <div class="container_menu-button">
+        <div class="button_call-action">
+          <button class="button_item">
+            Fazer Reserva
+          </button>
+        </div>
+        <div id="hamburguer-main" class="menu_hamburguer">
           <button id="hamburguer_button" class="hamburguer_icon">
             <span class="icon"></span>
             <span class="icon"></span>
@@ -38,11 +47,6 @@
             <span id="cancel">X</span>
           </button>
         </div>
-      </nav>
-      <div class="button_call-action">
-        <button class="button_item">
-          Fazer Reserva
-        </button>
       </div>
     </div>
   </header>
@@ -166,7 +170,7 @@
     <section class="banner">
       <div class="container">
         <h2>Seu próximo hotel favorito</h2>
-        <h3>No coração de Mônaco, torne <br> sua viagem inesquecível</h3>
+        <p class="introduction">No coração de Mônaco, torne <br> sua viagem inesquecível</p>
         <div class="button_call-action">
           <button class="button_item">
             Fazer Reserva
@@ -279,6 +283,6 @@
     </div>
   </footer>
 </body>
-<script src="hotel.js"></script>
+<script src="hotel.js" defer></script>
 
 </html>

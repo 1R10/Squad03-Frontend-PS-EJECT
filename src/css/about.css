@@ -17,7 +17,7 @@
 .section_title .container {
   flex-direction: column;
 }
-.section_title h3 {
+.section_title p {
   text-align: center;
 }
 #about .container {
@@ -30,9 +30,9 @@
   background-color: var(--color-wine);
   border: 2px solid var(--color-gold);
 }
- .history_container-image {
-    text-align: end;
-  }
+.history_container-image {
+  text-align: end;
+}
 .history_container-text p {
   font-size: 3rem;
   font-weight: 400;
@@ -80,10 +80,18 @@
   padding: 20px 0;
   border: 3px solid var(--color-gold);
 }
-#about .team .container {
-  width: 80%;
+.subcontainer {
+  display: flex;
+  margin: 0 auto;
+  gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
+}
+div.suport {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
 }
 #about .team h3 {
   color: var(--color-brown);

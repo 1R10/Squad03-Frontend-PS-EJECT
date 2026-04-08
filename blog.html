@@ -21,19 +21,25 @@
   <header>
     <div class="container header_container">
       <div class="logo-apollo">
-        <h1>APOLLO</h1>
-        <h2>HOTEL</h2>
+        <a href="index.html">
+          <h1>APOLLO</h1>
+          <h2>HOTEL</h2>
+        </a>
       </div>
       <nav class="menu_header">
         <ul class="list_menu-header">
           <li class="list_item-header"><a href="index.html">Home</a></li>
           <li class="list_item-header"><a href="blog.html">Blog</a></li>
           <li class="list_item-header"><a href="about.html">Sobre Nós</a></li>
-          <link rel="stylesheet" href="src/css/responsive.css">
-          <link rel="stylesheet" href="src/css/menu-hamburguer.css">
-          <link rel="stylesheet" href="src/css/reserve.css">
         </ul>
-        <div class="menu_hamburguer">
+      </nav>
+      <div class="container_menu-button">
+        <div class="button_call-action">
+          <button class="button_item">
+            Fazer Reserva
+          </button>
+        </div>
+        <div id="hamburguer-main" class="menu_hamburguer">
           <button id="hamburguer_button" class="hamburguer_icon">
             <span class="icon"></span>
             <span class="icon"></span>
@@ -41,11 +47,6 @@
             <span id="cancel">X</span>
           </button>
         </div>
-      </nav>
-      <div class="button_call-action">
-        <button class="button_item">
-          Fazer Reserva
-        </button>
       </div>
     </div>
   </header>
@@ -169,7 +170,7 @@
     <section class="banner">
       <div class="container">
         <h2>Destinos à dois perto de você</h2>
-        <h3>Descubra refúgios exclusivos onde cada detalhe foi planejado para celebrar o amor</h3>
+        <p class="introduction">Descubra refúgios exclusivos onde cada detalhe foi planejado para celebrar o amor</p>
         <div class="button_call-action">
           <button id="reserve-button" class="button_item">
             Fazer Reserva
@@ -296,7 +297,7 @@
     </div>
   </footer>
 </body>
-<script src="hotel.js"></script>
+<script src="hotel.js" defer></script>
 <script src="blog.js" defer></script>
 
 </html>

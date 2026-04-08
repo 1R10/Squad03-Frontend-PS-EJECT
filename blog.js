@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   if (choice === "1" && content1) {
     content1.style.display = "flex";
   }
-  if (choice === "2" && content2) {gi
+  if (choice === "2" && content2) {
     content2.style.display = "flex";
   }
   if (choice === "3" && content3) {

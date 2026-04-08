@@ -1,9 +1,9 @@
-const icon = document.querySelectorAll(".icon");
 const hamburguerButton = document.getElementById("hamburguer_button");
-const cancel = document.getElementById("cancel");
 const containerMenuHamburguer = document.querySelector(
   ".container_menu-hamburguer",
 );
+const cancel = document.getElementById("cancel");
+
 const closeReservation = document.getElementById("close-reservation");
 const popupReserve = document.getElementById("popup_reserve");
 
@@ -16,6 +16,8 @@ const header = document.querySelector("header");
 let open = true;
 
 function clickHambuguer() {
+  const icon = document.querySelectorAll(".icon");
+
   if (open === true) {
     icon.forEach((item) => (item.style.display = "none"));
     cancel.style.display = "block";
@@ -65,17 +67,33 @@ const btnMenosChild = document.querySelector(".stepper-btn-menos-two");
 const btnMaisChild = document.querySelector(".stepper-btn-mais-two");
 const inputTwo = document.getElementById("input-child");
 
+let limit = 0;
+
 function increase(input) {
   let valor = Number(input.value) || 0;
-  input.value = valor + 1;
+  if (limit < 4) {
+    if (input.id == "input-child") {
+      if (input.value < 3) {
+        input.value = valor + 1;
+        limit += 1;
+      }
+    } else {
+      if (input.value < 4) {
+        input.value = valor + 1;
+        limit += 1;
+      }
+    }
+  }
 }
 function decrement(input) {
   let valor = Number(input.value) || 0;
 
   if (valor > 0) {
     input.value = valor - 1;
+    limit -= 1;
   }
 }
+
 btnMenosAdult.addEventListener("click", () => {
   decrement(inputOne);
 });

@@ -13,6 +13,10 @@ const buttonCallAction = document.querySelectorAll(
 const overlay = document.getElementById("overlay");
 const header = document.querySelector("header");
 
+window.addEventListener("resize", () => {
+  window.location.reload();
+});
+
 let open = true;
 
 function clickHambuguer() {

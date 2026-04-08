@@ -246,3 +246,5 @@ function slide() {
   slider.style.transform = `translateX(${-cont * 1005}px)`;
 }
 setInterval(slide, 5000);
+
+

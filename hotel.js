@@ -152,8 +152,7 @@ function inputsRestaurant() {
   return true;
 }
 const formHotel = document.getElementById("form_hotel");
-formHotel.addEventListener("submit", (event) => {
-  event.preventDefault();
+formHotel.addEventListener("submit", () => {
   if (inputsDate() && inputsRestaurant()) {
     popupContainer.style.display = "none";
     templateReserve.forEach((template) => {
@@ -163,8 +162,7 @@ formHotel.addEventListener("submit", (event) => {
 });
 
 const formRest = document.getElementById("res_form_hotel");
-formRest.addEventListener("submit", (event) => {
-  event.preventDefault();
+formRest.addEventListener("submit", () => {
   if (inputsRestaurant()) {
     popupContainerRestaurant.style.display = "none";
     templateRestaurant.style.display = "flex";

@@ -154,7 +154,6 @@ function inputsRestaurant() {
 
 /*const formRest = document.getElementById("res_form_hotel");*/
 
-
 /*-----------------------------------------------------------------------------------------------------------------------------------*/
 /*incremento e decrementação dos inputs para os formulários*/
 
@@ -232,5 +231,3 @@ function slide() {
   slider.style.transform = `translateX(${-cont * 1005}px)`;
 }
 setInterval(slide, 5000);
-
-

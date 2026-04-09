@@ -151,23 +151,9 @@ function inputsRestaurant() {
   }
   return true;
 }
-const formHotel = document.getElementById("form_hotel");
-formHotel.addEventListener("submit", () => {
-  if (inputsDate() && inputsRestaurant()) {
-    popupContainer.style.display = "none";
-    templateReserve.forEach((template) => {
-      template.style.display = "flex";
-    });
-  }
-});
 
-const formRest = document.getElementById("res_form_hotel");
-formRest.addEventListener("submit", () => {
-  if (inputsRestaurant()) {
-    popupContainerRestaurant.style.display = "none";
-    templateRestaurant.style.display = "flex";
-  }
-});
+/*const formRest = document.getElementById("res_form_hotel");*/
+
 
 /*-----------------------------------------------------------------------------------------------------------------------------------*/
 /*incremento e decrementação dos inputs para os formulários*/

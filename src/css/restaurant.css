@@ -1,8 +1,10 @@
 .restaurant {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
     url("../images/restaurant.jpg");
   background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   height: 80vh;
   position: relative;
   padding: 30px 0;

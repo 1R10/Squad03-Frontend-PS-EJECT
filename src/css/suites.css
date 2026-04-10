@@ -1,5 +1,5 @@
 .suites {
-  height: 80vh;
+  min-height: 80vh;
   padding: 20px 0;
   display: flex;
   gap: 10px;
@@ -23,15 +23,14 @@
   background: var(--color-gold) !important;
 }
 .container-carrossel figure {
-  
-  width: 100%; 
+  width: 300px;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  height: 350px; 
+  height: 350px;
 }
 .container-carrossel img {
   width: 100%;
@@ -56,4 +55,64 @@
 }
 .container-carrossel figure p {
   font-size: 2rem;
+}
+
+#modal-suites {
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  inset: 0;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--color-primary-text);
+  z-index: 1001;
+  border: 2px solid var(--color-gold);
+  color: var(--color-brown);
+  width: 90%;
+  height: 80vh;
+  margin: 120px auto;
+  overflow: auto;
+  padding: 20px 0;
+}
+#modal-suites .logo-apollo a h1,
+#modal-suites .logo-apollo a h2 {
+  color: var(--color-wine);
+}
+#modal-suites .logo-apollo {
+  width: 50%;
+}
+#modal-suites .close-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px 30px;
+  font-size: 4rem;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  color: var(--color-wine);
+}
+#modal-suites div:first-child {
+  width: 100%;
+}
+#modal-suites img {
+  max-width: 600px;
+}
+#modal-desc {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+#modal-suites.active {
+  display: flex;
+}
+.modal-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  width: 100%;
+}
+.modal-content #modal-titulo {
+  color: var(--color-brown) !important;
 }

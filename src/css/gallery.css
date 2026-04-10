@@ -1,63 +1,32 @@
+/* Seção Geral */
 .gallery {
   background-color: #442f22;
   background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
   text-align: center;
-  padding-top: 50px;
+  padding: 50px 0;
 }
 .gallery_container {
-  display: flex;
-  align-items: center;
-  padding: 15px 20px;
-  margin: 0 auto;
-  width: 85%;
-}
-.gallery_container button {
-  width: 29.6px;
-  height: 48px;
-  text-align: center;
-  font-size: 5rem;
-  font-weight: 700;
-  color: var(--color-primary-text);
-  background-color: transparent;
-  border: none;
-}
-.gallery_container button:hover {
-  color: var(--color-gold);
-  transform: translateY(-2px);
-  cursor: pointer;
-}
-
-.gallery .container {
-  margin: 20px auto;
-  padding: 0 5px;
+  width: 100%;
   max-width: 1000px;
   height: 500px;
+  margin: 30px auto;
+  position: relative;
+}
+.swiper-gallery {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
 }
-.slider {
-  display: flex;
-  gap: 5px;
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out;
+
+.gallery .swiper-slide {
+  width: 100% !important;
+  height: 100%;
 }
-.gallery .container figure {
-  margin: 0;
-  position: relative;
-  min-width: 1000px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-.gallery figcaption {
-  position: absolute;
-  font-size: 2rem;
-  padding: 10px;
-  bottom: 0;
-  background-color: black;
-  opacity: 0.7;
-  text-align: start;
-}
-.gallery .container img {
-  border-radius: 20px;
-  width: 1000px;
-  height: 500px;
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  border-radius: 10px;
 }

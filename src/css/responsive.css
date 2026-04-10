@@ -1,3 +1,11 @@
+@media (max-width: 1190px) {
+  .modal-content {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
 @media (max-width: 1000px) {
   .history_container-image {
     text-align: center;
@@ -18,7 +26,7 @@
 @media (min-width: 901px) and (max-width: 1100px) {
   header nav .list_menu-header,
   .container_menu-hamburguer .button_call-action {
-    display: none; 
+    display: none;
   }
   header .button_call-action,
   #hamburguer-main {
@@ -87,6 +95,9 @@
   }
 }
 @media (max-width: 720px) {
+  #modal-suites img {
+    width: 400px;
+  }
   #blog .banner .container h3 {
     font-size: 3rem;
   }
@@ -106,7 +117,8 @@
   .cards h3,
   .gallery h3,
   #about .section_title h3,
-  #about .team h3, .suites h3 {
+  #about .team h3,
+  .suites h3 {
     font-size: 3rem;
     text-align: center;
   }
@@ -121,3 +133,4 @@
     max-width: 100%;
   }
 }
+

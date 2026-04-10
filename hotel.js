@@ -61,6 +61,12 @@ function clickHambuguer() {
 
     open = true;
   }
+  overlay.addEventListener("click", () => {
+    cancel.style.display = "none";
+    containerMenuHamburguer.style.display = "none";
+    overlay.style.display = "none";
+    icon.forEach((item) => (item.style.display = "block"));
+  });
 }
 hamburguerButton.addEventListener("click", clickHambuguer);
 
@@ -83,6 +89,10 @@ function closeReserve() {
   overlay.style.display = "none";
   header.style.zIndex = "1002";
 }
+overlay.addEventListener("click", () => {
+  closeReserve();
+});
+
 const buttonCallAction = document.querySelectorAll(".btn_reserve_menu");
 buttonCallAction.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -103,6 +113,11 @@ function openReserveRestaurant() {
   popupReserveRestaurant.style.display = "flex";
   overlay.style.display = "flex";
 }
+overlay.addEventListener("click", () => {
+  popupReserveRestaurant.style.display = "none";
+  overlay.style.display = "none";
+});
+
 buttonReserveRestaurant.addEventListener("click", openReserveRestaurant);
 
 const inputDate = document.querySelectorAll('input[type="date"]');
@@ -229,46 +244,56 @@ btnMais.addEventListener("click", () => {
 });
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 
-const slider = document.getElementById("slider");
-const img = document.querySelectorAll(".slider figure");
-
-let cont = 0;
-
-function slide() {
-  cont++;
-
-  if (cont > img.length - 1) {
-    cont = 0;
-  }
-  slider.style.transform = `translateX(${-cont * 1005}px)`;
-
-  carrossel.style.transform = `translateX(${-cont * 100}px)`;
-}
-setInterval(slide, 5000);
-
-const swiper = new Swiper(".swiper", {
-  direction: "horizontal",
+const swiperGallery = new Swiper('.swiper-gallery', {
+  slidesPerView: 1,
+  spaceBetween: 0,
   loop: true,
-  autoplay: {
-    delay: 3000, // (3000ms = 3 segundos)
-    disableOnInteraction: false,
-    pauseOnMouseEnter: true,
-  },
-  slidesPerView: 3,
-  spaceBetween: 30,
-
-  breakpoints: {
-    320: { slidesPerView: 1 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 },
-  },
-
-  pagination: {
-    el: ".swiper-pagination",
-  },
+  centeredSlides: true,
 
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: '.swiper-gallery .swiper-button-next',
+    prevEl: '.swiper-gallery .swiper-button-prev',
   },
+  pagination: {
+    el: '.swiper-gallery .swiper-pagination',
+    clickable: true,
+  },
+});
+
+
+const modal = document.querySelector("#modal-suites");
+const modalImg = modal.querySelector("#modal-img");
+const modalTitulo = modal.querySelector("#modal-titulo");
+const modalDesc = modal.querySelector("#modal-desc");
+const btnFechar = modal.querySelector(".close-button");
+
+const slides = document.querySelectorAll(".swiper-slide");
+
+slides.forEach((slide) => {
+  slide.addEventListener("click", () => {
+    // 1. Puxa as "etiquetas" (data attributes) que a gente colocou no HTML
+    const infos = {
+      titulo: slide.getAttribute("data-titulo"),
+      imagem: slide.getAttribute("data-img"),
+      descricao: slide.getAttribute("data-desc"),
+    };
+
+    // 2. Injeta os dados no modal
+    modalImg.src = infos.imagem;
+    modalTitulo.innerText = infos.titulo;
+    modalDesc.innerText = infos.descricao;
+
+    modal.classList.add("active");
+    overlay.style.display = "flex";
+  });
+});
+
+btnFechar.addEventListener("click", () => {
+  modal.classList.remove("active");
+  overlay.style.display = "none";
+});
+
+overlay.addEventListener("click", () => {
+  modal.classList.remove("active");
+  overlay.style.display = "none";
 });

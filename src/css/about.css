@@ -73,8 +73,9 @@
   font-size: 1.5rem;
 }
 .team {
-  background-color: var(--color-primary-text);
-  color: var(--color-brown);
+  background-color: var(--color-brown);
+  color: var(--color-primary-text);
+  background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
   text-align: center;
   padding: 20px 0;
   border: 3px solid var(--color-gold);
@@ -92,10 +93,6 @@ div.suport {
   justify-content: center;
   gap: 50px;
 }
-#about .team h3 {
-  color: var(--color-brown);
-}
-
 #about .team > p {
   font-size: 2rem;
   margin: 20px 0;
@@ -116,11 +113,28 @@ div.suport {
 #about footer {
   background-color: var(--color-wine) !important;
 }
-#about .swiper {
+#about .suites {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   position: relative;
 }
+#about .suites h3 {
+  padding: 0 10px;
+}
+#about .bed11 {
+  margin: 20px;
+}
+#about .bed11 img {
+  max-width: 100%;
+  border-radius: 10px;
+  width: 900px;
+  height: 370px;
+  border-radius: 10px;
+}
 #about .suites-f1 {
-  display: none;
   width: 300px;
   padding: 15px 20px;
   position: absolute;
@@ -129,10 +143,10 @@ div.suport {
   font-family: "Cinzel", serif;
   background-color: var(--color-wine);
   color: var(--color-primary-text);
-  top: 50%;
+  bottom: 0;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#about .swiper:hover .suites-f1 {
-  display: block;
+#about .bed11:hover {
+  opacity: 0.8;
 }

@@ -106,7 +106,7 @@
   .cards h3,
   .gallery h3,
   #about .section_title h3,
-  #about .team h3 {
+  #about .team h3, .suites h3 {
     font-size: 3rem;
     text-align: center;
   }

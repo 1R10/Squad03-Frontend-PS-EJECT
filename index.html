@@ -15,6 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/suites.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
   <title>Apollo Hotel</title>
 </head>
 
@@ -203,6 +205,93 @@
         </div>
       </div>
     </section>
+    <section id="suites-f1" class="suites">
+      <h3>Conheça as nossas temáticas e luxuosas Suítes</h3>
+      <div class="swiper">
+        <div class="swiper-wrapper container-carrossel">
+          <figure class="swiper-slide bed1">
+            <img src="src/images/bedroom/redbull.png" alt="">
+            <figcaption>
+              <p>Suíte Red Bull Racing</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed2">
+            <img src="src/images/bedroom/ferrari.jpg" alt="">
+            <figcaption>
+              <p>Suíte Scuderia Ferrari</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed3">
+            <img src="src/images/bedroom/mercedes.png" alt="">
+            <figcaption>
+              <p>Suíte Mercedes-AMG Petronas</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed4">
+            <img src="src/images/bedroom/mclaren.png" alt="">
+            <figcaption>
+              <p>Suíte McLaren</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed5">
+            <img src="src/images/bedroom/martin-aramco.png" alt="">
+            <figcaption>
+              <p>Suíte Aston Martin Aramco</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed5">
+            <img src="src/images/bedroom/martin-aramco.png" alt="">
+            <figcaption>
+              <p>Suíte Aston Martin Aramco</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed6">
+            <img src="src/images/bedroom/BTW.png" alt="">
+            <figcaption>
+              <p>Suíte BWT Alpine</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed8">
+            <img src="src/images/bedroom/hass.png" alt="">
+            <figcaption>
+              <p>Suíte Haas F1 Team</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed8">
+            <img src="src/images/bedroom/hass.png" alt="">
+            <figcaption>
+              <p>Suíte Haas F1 Team</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed9">
+            <img src="src/images/bedroom/kick-sauber.png" alt="">
+            <figcaption>
+              <p>Suíte Kick Sauber</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed10">
+            <img src="src/images/bedroom/visa.jpg" alt="">
+            <figcaption>
+              <p>Suíte Visa Cash App RB (VCARB)</p>
+            </figcaption>
+          </figure>
+          <figure class="swiper-slide bed11">
+            <img src="src/images/bedroom/campeoes.jpg" alt="">
+            <figcaption>
+              <div class="label">
+                <p>Suíte dos Campeões Históricos</p>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+    </section>
     <section class="restaurant">
       <div class="container">
         <h3>restaurante Apollo Hotel</h3>
@@ -214,70 +303,72 @@
                 Fazer Reserva
               </button>
             </div>
-        </section>
-        <section id="popup_reserve" class="popup_reserve popup_reserve-restaurant">
-          <button class="close-reserve" id="close-restarant">Fechar</button>
-          <div class="logo-apollo">
-            <h1>APOLLO</h1>
-            <h2>HOTEL</h2>
           </div>
-          <div class="popup_container" id="popup_container_restaurant">
-            <div class="form_container">
-              <form id="res_form_hotel" method="POST">
-                <fieldset class="name-and-email">
-                  <div class="name">
-                    <label for="name">Nome completo </label>
-                    <input type="text" name="restaurant-name" placeholder="digite aqui" required>
-                  </div>
-                  <div class="email">
-                    <label for="email">E-mail </label>
-                    <input type="text" name="restaurant-email" placeholder="digite aqui" required>
-                  </div>
-                  <div class="number-people">
-                    <div class="input-people">
-                      <label for="people">Qtd pessoas </label>
-                      <div class="border">
-                        <button type="button" class="stepper-btn-menos" id="btn-menos">-</button>
-                        <input type="number" name="qtd-people" id="input-people" min="1">
-                        <button type="button" class="stepper-btn-mais" id="btn-mais">+</button>
-                      </div>
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset class="reservation_restaurant">
-                  <div class="input_group">
-                    <div class="dine date-dine">
-                      <label for="restaurant-date">Data do Jantar</label>
-                      <input type="date" name="reserve-restaurant-date" id="reserve-restaurant-date" class="input_field" required>
-                    </div>
-                    <div class=" dine hour-dine">
-                      <label for="restaurant-time">Horário</label>
-                      <select id="reserve-restaurant-time" name="reserve-restaurant-time" required>
-                        <option value="">--:--</option>
-                        <option value="19:00">19:00</option>
-                        <option value="20:00">20:00</option>
-                        <option value="21:00">21:00</option>
-                        <option value="22:00">22:00</option>
-                      </select>
-                    </div>
-                  </div>
-                </fieldset>
-                <div class="button_call-action-restaurant">
-                  <button type="submit" form="res_form_hotel" id="reserve-button-restaurant" class="button_item">
-                    Reservar
-                  </button>
+        </section>
+      </div>
+      <section id="popup_reserve" class="popup_reserve popup_reserve-restaurant">
+        <button class="close-reserve" id="close-restarant">Fechar</button>
+        <div class="logo-apollo">
+          <h1>APOLLO</h1>
+          <h2>HOTEL</h2>
+        </div>
+        <div class="popup_container" id="popup_container_restaurant">
+          <div class="form_container">
+            <form id="res_form_hotel" method="POST">
+              <fieldset class="name-and-email">
+                <div class="name">
+                  <label for="name">Nome completo </label>
+                  <input type="text" name="restaurant-name" placeholder="digite aqui" required>
                 </div>
-              </form>
+                <div class="email">
+                  <label for="email">E-mail </label>
+                  <input type="text" name="restaurant-email" placeholder="digite aqui" required>
+                </div>
+                <div class="number-people">
+                  <div class="input-people">
+                    <label for="people">Qtd pessoas </label>
+                    <div class="border">
+                      <button type="button" class="stepper-btn-menos" id="btn-menos">-</button>
+                      <input type="number" name="qtd-people" id="input-people" min="1">
+                      <button type="button" class="stepper-btn-mais" id="btn-mais">+</button>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <fieldset class="reservation_restaurant">
+                <div class="input_group">
+                  <div class="dine date-dine">
+                    <label for="restaurant-date">Data do Jantar</label>
+                    <input type="date" name="reserve-restaurant-date" id="reserve-restaurant-date" class="input_field" required>
+                  </div>
+                  <div class=" dine hour-dine">
+                    <label for="restaurant-time">Horário</label>
+                    <select id="reserve-restaurant-time" name="reserve-restaurant-time" required>
+                      <option value="">--:--</option>
+                      <option value="19:00">19:00</option>
+                      <option value="20:00">20:00</option>
+                      <option value="21:00">21:00</option>
+                      <option value="22:00">22:00</option>
+                    </select>
+                  </div>
+                </div>
+              </fieldset>
+              <div class="button_call-action-restaurant">
+                <button type="submit" form="res_form_hotel" id="reserve-button-restaurant" class="button_item">
+                  Reservar
+                </button>
+              </div>
+            </form>
 
-            </div>
           </div>
-          <div class="template_completion" id="template_restaurant">
-            <span>Pedido de reserva concluido. Enviaremos uma mensagem de confirmação para o seu email!</span>
-            <br>
-            <br>
-            <span>Agradeçemos por escolher o Rataurante Apollo Hotel!</span>
-          </div>
-        </section>
+        </div>
+        <div class="template_completion" id="template_restaurant">
+          <span>Pedido de reserva concluido. Enviaremos uma mensagem de confirmação para o seu email!</span>
+          <br>
+          <br>
+          <span>Agradeçemos por escolher o Rataurante Apollo Hotel!</span>
+        </div>
+      </section>
       </div>
     </section>
     <section class="gallery">
@@ -363,5 +454,6 @@
   </footer>
 </body>
 <script src="hotel.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 
 </html>

@@ -229,5 +229,34 @@ function slide() {
     cont = 0;
   }
   slider.style.transform = `translateX(${-cont * 1005}px)`;
+
+  carrossel.style.transform = `translateX(${-cont * 100}px)`;
 }
 setInterval(slide, 5000);
+
+const swiper = new Swiper(".swiper", {
+  direction: "horizontal",
+  loop: true,
+  autoplay: {
+    delay: 3000, // (3000ms = 3 segundos)
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  },
+  slidesPerView: 3,
+  spaceBetween: 30,
+
+  breakpoints: {
+    320: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 },
+  },
+
+  pagination: {
+    el: ".swiper-pagination",
+  },
+
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

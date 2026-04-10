@@ -1,19 +1,29 @@
 .restaurant {
   background:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
     url("/src/images/restaurant.jpg");
   background-attachment: fixed;
   height: 80vh;
   position: relative;
   padding: 30px 0;
 }
+.restaurant .container {
+  align-items: center;
+  flex-wrap: wrap;
+}
 .restaurant h3 {
-  color: var(--color-wine);
+  background-color: transparent;
+  color: var(--color-primary-text);
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 5px rgba(0, 0, 0, 1);
+  font-size: 3rem;
+  letter-spacing: 8px;
   font-weight: 700;
-  font-family: "Cinzel", serif;
-  background-color: var(--color-primary-text);
-  width: 100%;
-  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--color-gold);
+  display: inline-block;
+  width: auto;
+  padding: 10px 40px;
 }
 .template {
   display: none;
@@ -27,25 +37,17 @@
   padding: 10px;
 }
 .call_of_restaurant {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: var(--color-wine);
+  backdrop-filter: blur(10px);
   font-size: 6rem;
-  font-weight: 500;
   color: var(--color-primary-text);
-  font-family: "Cinzel", serif;
-  padding: 20px;
-  max-width: 20ch;
-  border: 2px groove;
-  position: absolute;
-  bottom: 20px;
-  right: 0;
-}
-.container-call_of_restaurant .button_call-action-restaurant button {
-  background-color: var(--color-primary-text);
-  color: var(--color-wine);
-  margin-top: 20px;
+  line-height: 1.6;
+  max-width: 400px;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  padding: 40px;
+  right: 5%;
+  bottom: 50px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 .popup_reserve-restaurant form {
   display: flex;
@@ -66,4 +68,17 @@
 .popup_reserve-restaurant .reservation_restaurant {
   width: 100%;
   border: 2px groove;
+}
+.button_call-action-restaurant button {
+  border: 1px solid var(--color-gold) !important;
+  padding: 12px 30px;
+  text-transform: uppercase;
+  transition: all 0.4s;
+  cursor: pointer;
+  letter-spacing: 2px;
+  margin-top: 20px;
+}
+
+.button_call-action-restaurant button:hover {
+  box-shadow: 0 0 15px var(--color-gold);
 }

@@ -1,3 +1,15 @@
+const countdown = document.querySelector(".countdown");
+const arrowCountdown = document.querySelector(".arrow-countdown");
+
+arrowCountdown.addEventListener("click", () => {
+  countdown.style.display = "block";
+  arrowCountdown.style.display = "none";
+  setTimeout(function () {
+    countdown.style.display = "none";
+    arrowCountdown.style.display = "block";
+  }, 5000);
+});
+
 const hamburguerButton = document.getElementById("hamburguer_button");
 const containerMenuHamburguer = document.querySelector(
   ".container_menu-hamburguer",

@@ -73,7 +73,7 @@ function clickHambuguer() {
     overlay.addEventListener("click", () => {
       cancel.style.display = "none";
       containerMenuHamburguer.style.display = "none";
-      overlay.style.display = "none";
+      overlay.style.display = "none"; // <-- Aqui ele tenta esconder
       icon.forEach((item) => (item.style.display = "block"));
     });
   });
@@ -81,23 +81,30 @@ function clickHambuguer() {
 hamburguerButton.addEventListener("click", clickHambuguer);
 
 function openReserve() {
-  popupReserve.style.display = "flex";
+  if (popupReserve) popupReserve.style.display = "flex";
+
   overlays.forEach((overlay) => {
     overlay.style.display = "flex";
   });
-  header.style.zIndex = "1000";
-  if (containerMenuHamburguer.style.display === "flex") {
+
+  if (header) header.style.zIndex = "1000";
+
+  if (
+    containerMenuHamburguer &&
+    containerMenuHamburguer.style.display === "flex"
+  ) {
     containerMenuHamburguer.style.display = "none";
-    cancel.style.display = "none";
+    if (cancel) cancel.style.display = "none";
     icon.forEach((item) => {
       item.style.display = "flex";
     });
-    // if que diz pro hamburguer fechar ao abrir o form reserve
   }
 }
 function closeReserve() {
   popupReserve.style.display = "none";
-  popupReserveRestaurant.style.display = "none";
+  if (popupReserveRestaurant) {
+    popupReserveRestaurant.style.display = "none";
+  }
   overlays.forEach((overlay) => {
     overlay.style.display = "none";
   });
@@ -138,11 +145,12 @@ function openReserveRestaurant() {
 overlays.forEach((overlay) => {
   overlay.addEventListener("click", () => {
     popupReserveRestaurant.style.display = "none";
+    overlay.style.display = "none";
   });
 });
-
-buttonReserveRestaurant.addEventListener("click", openReserveRestaurant);
-
+if (buttonReserveRestaurant) {
+  buttonReserveRestaurant.addEventListener("click", openReserveRestaurant);
+}
 const inputDate = document.querySelectorAll('input[type="date"]');
 const dataCheckin = document.getElementById("check-in");
 const dataCheckout = document.getElementById("check-out");
@@ -254,66 +262,75 @@ btnMenosChild.addEventListener("click", () => {
 btnMaisChild.addEventListener("click", () => {
   increase(inputTwo);
 });
-btnMenos.addEventListener("click", () => {
-  decrement(inputPeopleRestaurant);
-  console.log("apertou menos");
-});
-
-btnMais.addEventListener("click", () => {
-  increase(inputPeopleRestaurant);
-  console.log("apertou mais");
-});
+if (btnMenos) {
+  btnMenos.addEventListener("click", () => {
+    decrement(inputPeopleRestaurant);
+    console.log("apertou menos");
+  });
+}
+if (btnMais) {
+  btnMais.addEventListener("click", () => {
+    increase(inputPeopleRestaurant);
+    console.log("apertou mais");
+  });
+}
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 
-const swiperGallery = new Swiper(".swiper-gallery", {
-  slidesPerView: 1,
-  spaceBetween: 0,
-  loop: true,
-  centeredSlides: true,
+if (typeof Swiper !== "undefined") {
+  new Swiper(".swiper-gallery", {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    centeredSlides: true,
 
-  navigation: {
-    nextEl: ".swiper-gallery .swiper-button-next",
-    prevEl: ".swiper-gallery .swiper-button-prev",
-  },
-  pagination: {
-    el: ".swiper-gallery .swiper-pagination",
-    clickable: true,
-  },
-});
-
-const modal = document.querySelector("#modal-suites");
-const modalImg = modal.querySelector("#modal-img");
-const modalTitulo = modal.querySelector("#modal-titulo");
-const modalDesc = modal.querySelector("#modal-desc");
-const btnFechar = modal.querySelector(".close-button");
-
-const slides = document.querySelectorAll(".swiper-slide");
-
-slides.forEach((slide) => {
-  slide.addEventListener("click", () => {
-    // 1. Puxa as "etiquetas" (data attributes) que a gente colocou no HTML
-    const infos = {
-      titulo: slide.getAttribute("data-titulo"),
-      imagem: slide.getAttribute("data-img"),
-      descricao: slide.getAttribute("data-desc"),
-    };
-
-    // 2. Injeta os dados no modal
-    modalImg.src = infos.imagem;
-    modalTitulo.innerText = infos.titulo;
-    modalDesc.innerText = infos.descricao;
-
-    modal.classList.add("active");
-    overlay.style.display = "flex";
+    navigation: {
+      nextEl: ".swiper-gallery .swiper-button-next",
+      prevEl: ".swiper-gallery .swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-gallery .swiper-pagination",
+      clickable: true,
+    },
   });
-});
+}
+const modal = document.querySelector("#modal-suites");
 
-btnFechar.addEventListener("click", () => {
-  modal.classList.remove("active");
-  overlay.style.display = "none";
-});
+if (modal) {
+  const modalImg = modal.querySelector("#modal-img");
+  const modalTitulo = modal.querySelector("#modal-titulo");
+  const modalDesc = modal.querySelector("#modal-desc");
+  const btnFechar = modal.querySelector(".close-button");
 
-overlay.addEventListener("click", () => {
-  modal.classList.remove("active");
-  overlay.style.display = "none";
-});
+  const slides = document.querySelectorAll(".swiper-slide");
+
+  slides.forEach((slide) => {
+    slide.addEventListener("click", () => {
+      // 1. Puxa as "etiquetas" (data attributes) que a gente colocou no HTML
+      const infos = {
+        titulo: slide.getAttribute("data-titulo"),
+        imagem: slide.getAttribute("data-img"),
+        descricao: slide.getAttribute("data-desc"),
+      };
+
+      // 2. Injeta os dados no modal
+      modalImg.src = infos.imagem;
+      modalTitulo.innerText = infos.titulo;
+      modalDesc.innerText = infos.descricao;
+
+      modal.classList.add("active");
+      overlay.style.display = "flex";
+    });
+  });
+
+  btnFechar.addEventListener("click", () => {
+    modal.classList.remove("active");
+    overlay.style.display = "none";
+  });
+
+  overlays.forEach((overlay) => {
+    overlay.addEventListener("click", () => {
+      modal.classList.remove("active");
+      overlay.style.display = "none";
+    });
+  });
+}

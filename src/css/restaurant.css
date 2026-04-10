@@ -5,7 +5,7 @@
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  height: 80vh;
+  min-height: 80vh;
   position: relative;
   padding: 30px 0;
 }
@@ -24,10 +24,17 @@
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 50px;
-  border-bottom: 1px solid var(--color-gold);
   display: inline-block;
   width: auto;
   padding: 10px 40px;
+}
+.restaurant h3::after {
+  content: "";
+  display: block;
+  border: none;
+  background-color: var(--color-gold);
+  height: 2px;
+  width: 100%;
 }
 .template {
   display: none;

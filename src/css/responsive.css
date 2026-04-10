@@ -134,3 +134,19 @@
   }
 }
 
+@media (max-width: 500px) {
+  .banner .container h3,
+  .cards h3,
+  .gallery h3,
+  #about .section_title h3,
+  #about .team h3,
+  .suites h3 {
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #index .cards .card img {
+    width: 350px !important;
+  }
+}

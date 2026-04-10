@@ -1,14 +1,16 @@
 const countdown = document.querySelector(".countdown");
 const arrowCountdown = document.querySelector(".arrow-countdown");
 
-arrowCountdown.addEventListener("click", () => {
-  countdown.style.display = "block";
-  arrowCountdown.style.display = "none";
-  setTimeout(function () {
-    countdown.style.display = "none";
-    arrowCountdown.style.display = "block";
-  }, 5000);
-});
+if (arrowCountdown) {
+  arrowCountdown.addEventListener("click", () => {
+    countdown.style.display = "block";
+    arrowCountdown.style.display = "none";
+    setTimeout(function () {
+      countdown.style.display = "none";
+      arrowCountdown.style.display = "block";
+    }, 5000);
+  });
+}
 
 const hamburguerButton = document.getElementById("hamburguer_button");
 const containerMenuHamburguer = document.querySelector(
@@ -22,7 +24,7 @@ const popupReserveRestaurant = document.querySelector(
   ".popup_reserve-restaurant",
 );
 
-const overlay = document.getElementById("overlay");
+const overlays = document.querySelectorAll(".overlays");
 const header = document.querySelector("header");
 
 window.addEventListener("resize", () => {
@@ -36,7 +38,9 @@ window.addEventListener("resize", () => {
       icon.forEach((item) => {
         item.style.display = "flex";
       });
-      overlay.style.display = "none";
+      overlays.forEach((overlay) => {
+        overlay.style.display = "none";
+      });
     }
   }
 });
@@ -50,29 +54,37 @@ function clickHambuguer() {
     });
     cancel.style.display = "block";
     containerMenuHamburguer.style.display = "flex";
-    overlay.style.display = "flex";
+    overlays.forEach((overlay) => {
+      overlay.style.display = "flex";
+    });
 
     open = false;
   } else {
     icon.forEach((item) => (item.style.display = "block"));
     cancel.style.display = "none";
     containerMenuHamburguer.style.display = "none";
-    overlay.style.display = "none";
+    overlays.forEach((overlay) => {
+      overlay.style.display = "none";
+    });
 
     open = true;
   }
-  overlay.addEventListener("click", () => {
-    cancel.style.display = "none";
-    containerMenuHamburguer.style.display = "none";
-    overlay.style.display = "none";
-    icon.forEach((item) => (item.style.display = "block"));
+  overlays.forEach((overlay) => {
+    overlay.addEventListener("click", () => {
+      cancel.style.display = "none";
+      containerMenuHamburguer.style.display = "none";
+      overlay.style.display = "none";
+      icon.forEach((item) => (item.style.display = "block"));
+    });
   });
 }
 hamburguerButton.addEventListener("click", clickHambuguer);
 
 function openReserve() {
   popupReserve.style.display = "flex";
-  overlay.style.display = "flex";
+  overlays.forEach((overlay) => {
+    overlay.style.display = "flex";
+  });
   header.style.zIndex = "1000";
   if (containerMenuHamburguer.style.display === "flex") {
     containerMenuHamburguer.style.display = "none";
@@ -86,11 +98,15 @@ function openReserve() {
 function closeReserve() {
   popupReserve.style.display = "none";
   popupReserveRestaurant.style.display = "none";
-  overlay.style.display = "none";
+  overlays.forEach((overlay) => {
+    overlay.style.display = "none";
+  });
   header.style.zIndex = "1002";
 }
-overlay.addEventListener("click", () => {
-  closeReserve();
+overlays.forEach((overlay) => {
+  overlay.addEventListener("click", () => {
+    closeReserve();
+  });
 });
 
 const buttonCallAction = document.querySelectorAll(".btn_reserve_menu");
@@ -103,6 +119,9 @@ const buttonCloseReserve = document.querySelectorAll(".close-reserve");
 buttonCloseReserve.forEach((close) => {
   close.addEventListener("click", () => {
     closeReserve();
+    overlays.forEach((overlay) => {
+      overlay.style.display = "none";
+    });
   });
 });
 
@@ -111,11 +130,15 @@ const buttonReserveRestaurant = document.getElementById(
 );
 function openReserveRestaurant() {
   popupReserveRestaurant.style.display = "flex";
-  overlay.style.display = "flex";
+  overlays.forEach((overlay) => {
+    overlay.style.display = "flex";
+  });
 }
-overlay.addEventListener("click", () => {
-  popupReserveRestaurant.style.display = "none";
-  overlay.style.display = "none";
+
+overlays.forEach((overlay) => {
+  overlay.addEventListener("click", () => {
+    popupReserveRestaurant.style.display = "none";
+  });
 });
 
 buttonReserveRestaurant.addEventListener("click", openReserveRestaurant);
@@ -178,8 +201,6 @@ function inputsRestaurant() {
   }
   return true;
 }
-
-/*const formRest = document.getElementById("res_form_hotel");*/
 
 /*-----------------------------------------------------------------------------------------------------------------------------------*/
 /*incremento e decrementação dos inputs para os formulários*/
@@ -244,22 +265,21 @@ btnMais.addEventListener("click", () => {
 });
 /*-----------------------------------------------------------------------------------------------------------------------------*/
 
-const swiperGallery = new Swiper('.swiper-gallery', {
+const swiperGallery = new Swiper(".swiper-gallery", {
   slidesPerView: 1,
   spaceBetween: 0,
   loop: true,
   centeredSlides: true,
 
   navigation: {
-    nextEl: '.swiper-gallery .swiper-button-next',
-    prevEl: '.swiper-gallery .swiper-button-prev',
+    nextEl: ".swiper-gallery .swiper-button-next",
+    prevEl: ".swiper-gallery .swiper-button-prev",
   },
   pagination: {
-    el: '.swiper-gallery .swiper-pagination',
+    el: ".swiper-gallery .swiper-pagination",
     clickable: true,
   },
 });
-
 
 const modal = document.querySelector("#modal-suites");
 const modalImg = modal.querySelector("#modal-img");

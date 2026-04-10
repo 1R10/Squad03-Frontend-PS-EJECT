@@ -21,9 +21,10 @@
   <header>
     <div class="container header_container">
       <div class="logo-apollo">
-        <a href="index.html"></a>
-        <h1>APOLLO</h1>
-        <h2>HOTEL</h2>
+        <a href="index.html">
+          <h1>APOLLO</h1>
+          <h2>HOTEL</h2>
+        </a>
       </div>
       <nav class="menu_header">
         <ul class="list_menu-header">
@@ -32,20 +33,21 @@
           <li class="list_item-header"><a href="about.html">Sobre Nós</a></li>
         </ul>
       </nav>
-      <div class="button_call-action">
-        <button class="button_item btn_reserve_menu">
-          Fazer Reserva
-        </button>
+      <div class="container_menu-button">
+        <div class="button_call-action">
+          <button class="button_item btn_reserve_menu">
+            Fazer Reserva
+          </button>
+        </div>
+        <div id="hamburguer-main" class="menu_hamburguer">
+          <button id="hamburguer_button" class="hamburguer_icon">
+            <span class="icon"></span>
+            <span class="icon"></span>
+            <span class="icon"></span>
+            <span id="cancel">X</span>
+          </button>
+        </div>
       </div>
-      <div id="hamburguer-main" class="menu_hamburguer">
-        <button id="hamburguer_button" class="hamburguer_icon">
-          <span class="icon"></span>
-          <span class="icon"></span>
-          <span class="icon"></span>
-          <span id="cancel">X</span>
-        </button>
-      </div>
-    </div>
     </div>
   </header>
   <section class="container_menu-hamburguer">
@@ -58,8 +60,9 @@
         </ul>
       </nav>
       <div class="button_call-action">
-        <button class="button_item">
-          Fazer Reserva </button>
+        <button class="button_item btn_reserve_menu">
+          Fazer Reserva
+        </button>
       </div>
     </div>
   </section>
@@ -163,7 +166,7 @@
       <span>Agradeçemos por escolher o Apollo Hotel!</span>
     </div>
   </section>
-  <div id="overlay"></div>
+  <div class="overlays"></div>
   <main id="content-blog">
     <div class="container">
       <div class="content-1">

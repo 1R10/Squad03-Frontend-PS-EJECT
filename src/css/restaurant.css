@@ -1,6 +1,6 @@
 .restaurant {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../images/restaurant.jpg");
   background-attachment: fixed;
   height: 80vh;
@@ -14,7 +14,9 @@
 .restaurant h3 {
   background-color: transparent;
   color: var(--color-primary-text);
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8), 0 0 5px rgba(0, 0, 0, 1);
+  text-shadow:
+    0 0 15px rgba(0, 0, 0, 0.8),
+    0 0 5px rgba(0, 0, 0, 1);
   font-size: 3rem;
   letter-spacing: 8px;
   font-weight: 700;

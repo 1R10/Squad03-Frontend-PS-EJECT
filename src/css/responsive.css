@@ -164,3 +164,23 @@
     font-size: 2rem !important;
   }
 }
+@media (max-width: 560px) {
+  #blog .cards .container {
+    padding: 30px 20px;
+  }
+  #blog figure {
+    width: 300px;
+  }
+  #blog .card-blog img {
+    width: 300px;
+  }
+  .title_blog {
+    font-size: 2rem !important;
+  }
+  .author-name p {
+    font-size: 1.5rem !important;
+  }
+  .author-name span {
+    font-size: 1.5rem !important;
+  }
+}

@@ -23,6 +23,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  padding-bottom: 20px;
 }
 .pagination a {
   font-size: 3rem;
@@ -49,29 +50,46 @@
 #blog .banner .sub-title {
   font-size: 4rem;
   font-weight: 200;
-  margin-top: 10px;
+  margin: 20px 0;
 }
 #blog .cards {
-  padding: 40px 0;
-  gap: 30px;
-  background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
   background-color: var(--color-brown);
+  background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
+  padding: 20px 0;
 }
-#blog .card {
-  display: flex;
-  width: 500px;
-  height: 400px;
-  border-radius: 10px;
-  gap: 0;
+#blog .cards .container {
+  padding: 30px 20px;
+}
+#blog figure {
   color: var(--color-primary-text);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  width: 500px;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
 }
-#blog img {
-  width: 100%;
+#blog .card-blog img {
+  width: 500px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 #blog figcaption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: var(--color-wine);
+  background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
+  font-size: 4rem;
+  border-radius: 10px;
 }
+#blog .card-blog button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  color: var(--color-primary-text);
+  background: var(--color-wine);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 #blog .caption-wrapper {
   padding: 10px;
 }

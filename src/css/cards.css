@@ -15,7 +15,6 @@
   color: var(--color-primary-text);
   padding-bottom: 30px;
 }
-
 .cards .container {
   flex-wrap: wrap;
   justify-content: center;

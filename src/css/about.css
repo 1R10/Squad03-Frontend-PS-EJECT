@@ -3,7 +3,14 @@
     linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("../images/img-banner-home.png");
   width: 100%;
-  height: 70vh;
+  /* Primeiro o padrão para navegadores antigos */
+  height: 100vh;
+  /* Depois o dinâmico para iPhones e Androids modernos */
+  height: 100dvh;
+  /* GARANTIA DE CENTRALIZAÇÃO */
+  background-origin: border-box;
+  background-clip: border-box;
+  /* Se a imagem for muito alta ou larga, isso força o foco no meio */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

@@ -12,6 +12,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  /* GARANTIA DE CENTRALIZAÇÃO */
+  background-origin: border-box;
+  background-clip: border-box;
+  /* Se a imagem for muito alta ou larga, isso força o foco no meio */
   color: var(--color-primary-text);
   padding-bottom: 30px;
 }
@@ -27,7 +31,7 @@
   border-radius: 10px;
   position: relative;
 }
-#index .cards .card img{
+#index .cards .card img {
   width: 400px;
   height: 300px;
 }

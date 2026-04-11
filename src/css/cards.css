@@ -17,6 +17,7 @@
   background-clip: border-box;
   /* Se a imagem for muito alta ou larga, isso força o foco no meio */
   color: var(--color-primary-text);
+  padding-top: 30px;
   padding-bottom: 30px;
 }
 .cards .container {

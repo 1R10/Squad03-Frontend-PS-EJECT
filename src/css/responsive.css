@@ -184,4 +184,16 @@
     font-size: 1.5rem !important;
   }
 }
-
+/* Isso vai pegar quase todos os iPhones modernos */
+@media screen and (max-width: 500px) {
+  #index .banner,
+  #index .cards,
+  #index .restaurant,
+  #blog .banner {
+    background-attachment: scroll !important;
+  }
+  #index .card .subtitle-card,
+  #blog .banner {
+    padding-top: 10px !important;
+  }
+}

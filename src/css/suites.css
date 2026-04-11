@@ -43,6 +43,21 @@
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
+.container-carrossel figure:hover::after {
+  content: "Clique aqui";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: var(--color-primary-text);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 10;
+  font-family: "Cinzel", serif;
+}
 .container-carrossel figcaption {
   position: absolute;
   background-color: var(--color-primary-text);

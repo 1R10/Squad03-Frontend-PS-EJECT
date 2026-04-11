@@ -13,6 +13,9 @@
   --color-brown: #442f22;
   --color-gold: #8f773c;
 }
+html {
+  scroll-behavior: smooth;
+}
 .overlays {
   position: fixed;
   top: 0;

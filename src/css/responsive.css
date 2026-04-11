@@ -196,4 +196,10 @@
   #blog .banner {
     padding-top: 10px !important;
   }
+  .modal-content #modal-titulo {
+    font-size: 2rem;
+  }
+  .modal-content #modal-desc {
+    font-size: 2rem;
+  }
 }

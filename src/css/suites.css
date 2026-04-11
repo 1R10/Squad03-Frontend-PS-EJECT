@@ -97,6 +97,10 @@
 #modal-suites .logo-apollo a h1,
 #modal-suites .logo-apollo a h2 {
   color: var(--color-wine);
+  padding-left: 10px;
+}
+#modal-suites .logo-apollo a h1 {
+  padding-left: 10px;
 }
 #modal-suites .logo-apollo {
   width: 50%;

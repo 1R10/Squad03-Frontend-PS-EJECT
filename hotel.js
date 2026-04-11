@@ -1,3 +1,11 @@
+window.addEventListener("load", function () {
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(() => {
+    preloader.classList.add("pode-sumir");
+  }, 500);
+});
+
 const countdown = document.querySelector(".countdown");
 const arrowCountdown = document.querySelector(".arrow-countdown");
 

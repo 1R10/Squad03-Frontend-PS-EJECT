@@ -2,7 +2,7 @@ window.addEventListener("load", function () {
   const preloader = document.getElementById("preloader");
 
   setTimeout(() => {
-    preloader.classList.add("pode-sumir");
+    preloader.classList.add("hidden");
   }, 500);
 });
 

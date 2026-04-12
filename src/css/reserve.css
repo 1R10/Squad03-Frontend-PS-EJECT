@@ -1,0 +1,189 @@
+#popup_reserve {
+  display: none;
+}
+.popup_reserve {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  max-width: 90%;
+  height: 90%;
+}
+.popup_reserve,
+.popup_reserve-restaurant {
+  background-color: var(--color-primary-text);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  z-index: 1002;
+  overflow-y: auto;
+  border-radius: 20px;
+}
+.popup_reserve .logo-apollo,
+.popup_reserve-restaurant .logo-apollo {
+  margin-top: 100px;
+  display: inline-block;
+}
+.popup_reserve .logo-apollo h1,
+.popup_reserve-restaurant .logo-apollo h1 {
+  text-align: center;
+}
+.popup_reserve .logo-apollo h1,
+.popup_reserve-restaurant .logo-apollo h1,
+.popup_reserve .logo-apollo h2,
+.popup_reserve-restaurant .logo-apollo h2 {
+  color: var(--color-wine);
+}
+.close-reserve {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 20px;
+  font-size: 2rem;
+  color: var(--color-wine);
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+.popup_container {
+  height: 95%;
+  width: 95%;
+}
+.popup_container img {
+  margin-top: 50px;
+}
+form {
+  margin: 20px 0;
+  width: 80%;
+  margin: 0 auto;
+}
+form label {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  text-align: start;
+  color: var(--color-wine);
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+
+.name,
+.check-container,
+.accommodation,
+.email,
+.phone {
+  display: flex;
+  flex-direction: column;
+}
+.input_group,
+.check,
+.number-people {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.dine,
+.check-container,
+.number-people > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 150px;
+}
+.name,
+.check-container,
+.accommodation,
+.phone,
+.email {
+  margin: 20px 0;
+}
+input,
+select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1.5rem;
+  color: gray;
+  border: 2px solid var(--color-wine);
+}
+
+.number-people input {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  width: 40px;
+  margin: 0 10px;
+}
+.number-people .border {
+  border: 2px solid var(--color-wine);
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+.number-people .border button {
+  font-size: 3rem;
+  background-color: transparent;
+  border: none;
+  color: gray;
+}
+
+/* REMOÇÃO DE SPINNERS DO INPUT NUMBER*/
+
+/* Para Chrome, Safari, Edge e Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Para Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+.reservation_restaurant {
+  margin: 25px 0 10px;
+  padding: 10px;
+  border: 1px solid var(--color-gold);
+  border-radius: 10px;
+}
+.reservation_restaurant legend {
+  font-size: 2rem;
+  margin: 5px 0;
+  color: var(--color-wine);
+}
+
+.form_container .button_call-action {
+  margin: 40px 0;
+}
+.form_container {
+  padding: 10px 0;
+}
+.template_completion {
+  width: 80%;
+  display: none;
+  flex-direction: column;
+}
+.template_completion::before {
+  content: " ";
+  display: block;
+  background-color: var(--color-gold);
+  width: 70%;
+  height: 5px;
+  margin: 0 auto 30px;
+}
+.template_completion span {
+  font-size: 3rem;
+  font-family: "Cinzel", serif;
+  font-weight: 700;
+  color: var(--color-wine);
+  font-style: italic;
+}
+.template_completion span:not(:first-child) {
+  font-size: 2rem;
+}

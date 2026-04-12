@@ -1,0 +1,159 @@
+.section_title {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/img-banner-home.png");
+  width: 100%;
+  /* Primeiro o padrão para navegadores antigos */
+  height: 100vh;
+  /* Depois o dinâmico para iPhones e Androids modernos */
+  height: 100dvh;
+  /* GARANTIA DE CENTRALIZAÇÃO */
+  background-origin: border-box;
+  background-clip: border-box;
+  /* Se a imagem for muito alta ou larga, isso força o foco no meio */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+.section_title .container {
+  flex-direction: column;
+}
+.section_title p {
+  text-align: center;
+}
+#about .container {
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px 30px;
+}
+.history_hotel {
+  display: flex;
+  background-color: var(--color-wine);
+  border: 2px solid var(--color-gold);
+}
+.history_container-image {
+  text-align: end;
+}
+.history_container-text p {
+  font-size: 2.5rem;
+  font-weight: 400;
+  max-width: 60ch;
+  color: var(--color-primary-text);
+}
+#about .cards .container {
+  justify-content: space-between;
+  gap: 20px;
+  padding: 100px 0;
+}
+#about .card {
+  background-color: var(--color-wine);
+  color: var(--color-primary-text);
+  border: 2px solid var(--color-gold);
+  width: 300px;
+  height: 400px;
+  padding: 16px 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  margin: 0 auto;
+}
+#about .card .box-icon {
+  background-color: var(--color-gold);
+  padding: 10px;
+  border-radius: 50%;
+}
+#about .value-text h4 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+#about .value-text p {
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.team {
+  background-color: var(--color-brown);
+  color: var(--color-primary-text);
+  background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
+  text-align: center;
+  padding: 20px 0;
+  border: 3px solid var(--color-gold);
+}
+.subcontainer {
+  display: flex;
+  margin: 0 auto;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+div.suport {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+}
+#about .team > p {
+  font-size: 2rem;
+  margin: 20px;
+}
+.team figure img {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  width: 200px;
+}
+.team figure img:hover {
+  transform: translateY(-5px);
+}
+.team figcaption {
+  padding: 10px 0;
+  font-size: 3rem;
+}
+#about .suites,
+#about footer {
+  background-color: var(--color-wine) !important;
+}
+#about .suites {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+#about .suites h3 {
+  padding: 0 10px;
+}
+#about .bed11 {
+  margin: 20px;
+}
+#about .bed11 img {
+  max-width: 100%;
+  border-radius: 10px;
+  width: 900px;
+  height: 370px;
+  border-radius: 10px;
+}
+#about .suites-f1 {
+  width: 300px;
+  padding: 15px 20px;
+  position: absolute;
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Cinzel", serif;
+  background-color: var(--color-wine);
+  color: var(--color-primary-text);
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#about .bed11:hover {
+  opacity: 0.8;
+}

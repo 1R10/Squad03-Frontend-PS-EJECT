@@ -1,0 +1,56 @@
+.cards {
+  width: 100%;
+  background-color: var(--color-gold);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../images/img-banner-home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  /* GARANTIA DE CENTRALIZAÇÃO */
+  background-origin: border-box;
+  background-clip: border-box;
+  /* Se a imagem for muito alta ou larga, isso força o foco no meio */
+  color: var(--color-primary-text);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.cards .container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+#index .cards .container {
+  padding: 50px 0 60px;
+}
+.card figure {
+  border-radius: 10px;
+  position: relative;
+}
+#index .cards .card img {
+  width: 400px;
+  height: 300px;
+}
+.card figcaption {
+  position: absolute;
+  font-size: 2.5rem;
+  text-align: center;
+  bottom: 0;
+  background-color: var(--color-brown);
+  background-image: url("https://www.transparenttextures.com/patterns/white-wall-3-2.png");
+  width: 100%;
+  padding: 10px 0;
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+}
+.card {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.card:hover {
+  transform: translateY(-5px);
+}

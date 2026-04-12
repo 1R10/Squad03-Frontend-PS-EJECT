@@ -1,0 +1,205 @@
+@media (max-width: 1190px) {
+  .modal-content {
+    flex-wrap: wrap;
+    justify-content: center !important;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+@media (max-width: 1000px) {
+  .history_container-image {
+    text-align: center;
+  }
+  .history_hotel .container {
+    flex-direction: column;
+  }
+  .subtitle-card:not(#blog .subtitle-card) {
+    margin-bottom: 40px;
+  }
+  .subtitle-card {
+    text-align: center;
+  }
+  #content-blog .caption-image {
+    flex-direction: column;
+  }
+}
+@media (min-width: 901px) and (max-width: 1100px) {
+  header nav .list_menu-header,
+  .container_menu-hamburguer .button_call-action {
+    display: none;
+  }
+  header .button_call-action,
+  #hamburguer-main {
+    display: block;
+  }
+  .container_menu-button {
+    display: flex;
+    gap: 30px;
+  }
+}
+@media (max-width: 900px) {
+  header nav .list_menu-header,
+  header .button_call-action {
+    display: none;
+  }
+  #hamburguer-main {
+    display: block;
+  }
+}
+@media (max-width: 800px) {
+  main .banner {
+    height: 60vh;
+  }
+  .banner .container {
+    display: block;
+    width: 100%;
+  }
+
+  .gallery_container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .footer_sub-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+  }
+  footer {
+    text-align: center;
+  }
+  .footer_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  footer iframe {
+    margin-top: 20px;
+  }
+}
+@media (min-width: 720px) and (max-width: 800px) {
+  .banner .container h3,
+  .cards h3,
+  #about .section_title h3 {
+    font-size: 4rem;
+  }
+  .banner .container h3 {
+    margin-top: 20px;
+  }
+  .banner .container h3,
+  .cards h3,
+  #about .section_title h3 {
+    font-size: 3rem;
+    text-align: center;
+  }
+}
+@media (max-width: 720px) {
+  #modal-suites img {
+    width: 400px;
+  }
+  #blog .banner .container h3 {
+    font-size: 3rem;
+  }
+  #blog .card .caption-wrapper p {
+    font-size: 2rem;
+  }
+  .banner .container h2,
+  .cards h2,
+  #about .section_title h2 {
+    font-size: 4rem;
+    text-align: center;
+  }
+  .banner .container h3 {
+    margin-top: 20px;
+  }
+  .banner .container h3,
+  .cards h3,
+  .gallery h3,
+  #about .section_title h3,
+  #about .team h3,
+  .suites h3 {
+    font-size: 3rem;
+    text-align: center;
+  }
+  p.introduction {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .history_container-image {
+    text-align: center;
+  }
+  .history_container-image img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .banner .container h3,
+  .cards h3,
+  .gallery h3,
+  #about .section_title h3,
+  #about .team h3,
+  .suites h3 {
+    font-size: 2rem;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  #index .cards .card img {
+    width: 350px !important;
+  }
+  header {
+    max-width: 100vw;
+    overflow: hidden;
+    padding: 0 10px;
+  }
+  .header-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .restaurant h3 {
+    max-width: 100%;
+    font-size: 2rem !important;
+  }
+}
+@media (max-width: 560px) {
+  #blog .cards .container {
+    padding: 30px 20px;
+  }
+  #blog figure {
+    width: 300px;
+  }
+  #blog .card-blog img {
+    width: 300px;
+  }
+  .title_blog {
+    font-size: 2rem !important;
+  }
+  .author-name p {
+    font-size: 1.5rem !important;
+  }
+  .author-name span {
+    font-size: 1.5rem !important;
+  }
+}
+/* Isso vai pegar quase todos os iPhones modernos */
+@media screen and (max-width: 500px) {
+  #index .banner,
+  #index .cards,
+  #index .restaurant,
+  #blog .banner {
+    background-attachment: scroll !important;
+  }
+  #index .card .subtitle-card,
+  #blog .banner {
+    padding-top: 10px !important;
+  }
+  .modal-content #modal-titulo {
+    font-size: 2rem;
+  }
+  .modal-content #modal-desc {
+    font-size: 2rem;
+  }
+}
